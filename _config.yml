@@ -1,0 +1,25 @@
+# Site settings
+title: TrivaaLogic Informatikai Kft.
+url: http://trivaalogic.hu
+baseurl: /
+
+# Build settings
+host: 0.0.0.0
+encoding: utf-8
+strict_front_matter: true
+exclude:
+  - deploy.sh
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+liquid:
+  error_mode: strict
+
+# i18n
+languages: ["hu", "en"]
+default_lang: "hu"
+exclude_from_localization: ["js", "img", "css"]
+parallel_localization: true
+
+# Collections
+collections:

@@ -12,7 +12,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
-  - concept.xcf
+  - design
 liquid:
   error_mode: strict
 

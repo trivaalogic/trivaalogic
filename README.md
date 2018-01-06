@@ -46,11 +46,10 @@ Company website.
   * Key message: description of work flow, what customer can expect
   * The workflow:
     1. Customer contacts us via mail or 'Ask for offer' page (call to action, again)
-    1. We organize meeting, discuss the details
-    1. We create a draft of the concept, if necessary
-    1. Agile is at the center: we deliver periodically, depending on agreement with customer
-    1. Testing, verification and validation of the software being built is continuous
+    1. We organize meeting, discuss the details and then create a draft of the concept, if necessary; agree on project start, draft timeline, requirements, etc.
+    1. Agile is at the center: we deliver periodically, depending on agreement with customer; testing, verification and validation of the software being built is continuous
     1. Constantly reviewing the completeness criteria after each iteration (established together at the beginning); emphasize flexibility
+    1. Installation to desired infrastructure
 * Content: About
   * Key message: Company introduction, year of foundation, etc..
 * Contenct: Contact

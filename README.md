@@ -76,3 +76,44 @@ Company website.
   * Phone
   * If phone is given: when can we contact you (weekday & hour range selector)
 * Button to send the request with; feedback of successful sending
+
+## Image positioning
+
+### Process background (large)
+
+One step is described by a box:
+* Gross dimension: 136px x 136px
+* Outer circle radius: 60px
+* Inner circle radius: 50px
+* Margin: 8px
+
+Background image dimensions: 1600px x 450px
+
+Spacing between steps in top row (with 3 steps): 596px
+
+2 * 596 + 3 * 136 = 1600
+
+(Left, Top) positions for steps, relative to image origin:
+1. (0, 0)
+1. (366, 314)
+1. (732, 0)
+1. (1098, 314)
+1. (1464, 0)
+
+## Process background (small)
+
+Step is described by the same box as in large.
+
+Background image dimensions: 210px x 1240px
+
+Gap between steps: 140px
+
+4 * 140 + 5 * 136 = 1240
+
+(Left, Top) positions for steps, relative to image origin:
+
+1. (74, 0)
+1. (0, 276)
+1. (74, 552)
+1. (0, 828)
+1. (74, 1104)

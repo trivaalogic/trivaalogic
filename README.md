@@ -117,3 +117,9 @@ Gap between steps: 140px
 1. (74, 552)
 1. (0, 828)
 1. (74, 1104)
+
+## Main colors:
+
+TrivaaLogic blue/green: #004964
+TrivaaLogic light: #7aa2b2
+Highlight: #ff7e16

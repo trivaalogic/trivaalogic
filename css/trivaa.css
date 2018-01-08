@@ -12,12 +12,10 @@ body {
 	background-repeat: no-repeat;
 }
 
-.container {
-	background-color: transparent;
-}
-
-.row {
-	background-color: transparent;
+@media (max-width: 1280px) {
+	body {
+		background-image: url(../img/background-small.png);
+	}
 }
 
 hr {

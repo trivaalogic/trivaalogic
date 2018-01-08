@@ -5,6 +5,7 @@ baseurl: /
 
 # Build settings
 host: 0.0.0.0
+port: 4100
 encoding: utf-8
 strict_front_matter: true
 exclude:
@@ -18,7 +19,7 @@ liquid:
 
 # i18n
 languages: ["hu", "en"]
-default_lang: "hu"
+default_lang: "en"
 exclude_from_localization: ["js", "img", "css"]
 parallel_localization: true
 

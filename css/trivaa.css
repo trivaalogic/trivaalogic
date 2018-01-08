@@ -251,6 +251,7 @@ hr.trivaa-process-separator-desktop {
 	border: none;
 	background-image: url(../img/process/step-3.png);
 	background-position: center;
+	background-size: cover;
 }
 
 /* Step highlight */
@@ -287,8 +288,10 @@ hr.trivaa-process-separator-desktop {
 }
 
 .trivaa-process-desktop .trivaa-process-step3 {
-	left: 732px;
+	left: 724px;
 	top: 0px;
+	width: 136px;
+	height: 136px;
 }
 
 .trivaa-process-desktop .trivaa-process-step3-text {

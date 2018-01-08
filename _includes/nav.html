@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-md navbar-light fixed-top">
+    <!-- Logo -->
+    <a class="navbar-brand" href="{{ page.permalink }}">
+        <img src="{{ page.permalink }}img/logo-small.png" alt="logo">
+    </a>
+
+    <!-- Markup for the toggler -->
+    <button class="navbar-toggler m-2 m-md-0" type="button" data-toggle="collapse" data-target="#trNavbar" aria-controls="trNavbar" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible menu -->
+    <div class="collapse navbar-collapse" id="trNavbar">
+        <ul class="navbar-nav w-100 align-items-center">
+            <li class="nav-item">
+                <a class="nav-link trivaa-menu-item" href="#areas">{{ site.data.texts.item_areas }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link trivaa-menu-item" href="#how-we-work">{{ site.data.texts.item_how_we_work }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link trivaa-menu-item" href="#about">{{ site.data.texts.item_about }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link trivaa-menu-item" href="#contact">{{ site.data.texts.item_contact }}</a>
+            </li>
+
+            <li class="w-100"></li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.facebook.com/trivaalogic" target="_blank">
+                    <img class="align-middle trivaa-facebook-icon" src="{{ page.permalink }}img/facebook-icon.ico">
+                </a>
+            </li>
+
+            <!-- Language selectors (<md) -->
+            <li class="nav-item d-md-none text-center py-4">
+                {% for lang in site.languages %}
+                    {% assign page_path = lang %}
+                    {% if lang == 'hu' %}
+                        {% assign page_path = "" %}
+                    {% endif %}
+                <a class="nav-link d-inline mx-4" href="{{ page_path | absolute_url }}">
+                    <img width="48" height="48" class="trivaa-flag-mobile" src="{{ page.permalink }}img/flag-{{ lang }}.png">
+                </a>
+                {% endfor %}
+            </li>
+
+            <!-- Language selectors (>=md) -->
+            {% for lang in site.languages %} {% assign page_path = lang %}
+                {% if lang == 'hu' %}
+                    {% assign page_path = "" %}
+                {% endif %}
+            <li class="nav-item d-none d-md-inline">
+                <a class="nav-link" href="{{ page_path | absolute_url }}">
+                    <img class="trivaa-flag-desktop align-middle" src="{{ page.permalink }}img/flag-{{ lang }}.png">
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>

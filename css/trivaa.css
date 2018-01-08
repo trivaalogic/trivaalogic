@@ -2,7 +2,99 @@
  * General styles.
  */
 
+body {
+	background-color: rgb(0, 73, 100);
+	color: white;
+	font-family: 'Oxygen', sans-serif;
+	background-image: url(../img/background-large.png);
+	background-position-x: right;
+	background-position-y: top;
+	background-repeat: no-repeat;
+}
+
 
 /**
  * Menu
  */
+
+/* Navbar styles */
+nav.navbar {
+	padding: 0px;
+}
+
+/* Item styles */
+.nav-item a.nav-link {
+	color: white !important;
+	text-transform: uppercase !important;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 0px;
+	white-space: nowrap;
+	padding: .5rem .75rem !important;
+	transition-property: background-color, color;
+	transition-duration: 250ms;
+}
+
+@media (max-width: 767px) {
+	.nav-item {
+		width: 100% !important;
+	}
+	
+	.nav-item a.nav-link {
+		padding-left: 1rem;
+	}
+
+	.navbar-collapse {
+		background-color: rgba(0, 73, 100, .4);
+	}
+}
+
+a.nav-link.trivaa-menu-item:hover {
+	background-color: rgb(250, 218, 35);
+	color: black !important;
+	transition-property: background-color, color;
+	transition-duration: 250ms;
+}
+
+/* Company brand */
+.navbar-brand {
+	padding: .0rem 0rem .0rem .5rem;
+}
+
+/* Mobile toggler button */
+button.navbar-toggler {
+	transition-property: background-color;
+	transition-duration: 250ms;
+}
+
+button.navbar-toggler:focus:not(.collapsed) {
+	background-color: rgb(250, 218, 35);
+	border: none;
+	outline: none;
+	transition-property: background-color;
+	transition-duration: 250ms;
+}
+
+/** Flags on dektop and mobile */
+.trivaa-flag-desktop {
+	width: 24px;
+	height: 24px;
+}
+
+.trivaa-flag-mobile {
+	width: 50px;
+	height: 50px;
+}
+
+/* Facebook icon */
+img.trivaa-facebook-icon {
+	width: 32px;
+	height: 32px;
+}
+
+@media (min-width: 768px) {
+	img.trivaa-facebook-icon {
+		width: 24px;
+		height: 24px;
+	}
+}

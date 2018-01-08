@@ -244,6 +244,7 @@ hr.trivaa-process-separator-desktop {
 
 .trivaa-process-step-text {
 	position: absolute;
+	font-size: 14px;
 }
 
 /* Step 3 is special 'cause of the arrows */
@@ -295,9 +296,9 @@ hr.trivaa-process-separator-desktop {
 }
 
 .trivaa-process-desktop .trivaa-process-step3-text {
-	left: 650px;
+	left: 640px;
 	top: 216px;
-	max-width: 350px;
+	max-width: 330px;
 }
 
 .trivaa-process-desktop .trivaa-process-step4 {

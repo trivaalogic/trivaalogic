@@ -179,16 +179,23 @@ img.trivaa-facebook-icon {
 	margin-bottom: 1rem;
 }
 
+.trivaa-areas h4 {
+	margin-bottom: 4rem;
+}
 
 /**
  * Process
  */
 
+/* Separator for the desktop */
+hr.trivaa-process-separator-desktop {
+	margin: 6rem 2rem;
+}
+
 /* Container for the desktop */
 .trivaa-process-desktop {
 	width: 1600px;
 	height: 450px;
-	margin-top: 6rem;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -197,6 +204,14 @@ img.trivaa-facebook-icon {
 	.trivaa-process-desktop {
 		display: none;
 	}
+
+	hr.trivaa-process-separator-desktop {
+		display: none;
+	}
+}
+
+.trivaa-process-desktop h4 {
+	margin-bottom: 4rem;
 }
 
 /* Inner container */
@@ -255,7 +270,7 @@ img.trivaa-facebook-icon {
 }
 
 .trivaa-process-desktop .trivaa-process-step1-text {
-	left: 216px;
+	left: 200px;
 	top: 0px;
 	max-width: 500px;
 }
@@ -299,7 +314,7 @@ img.trivaa-facebook-icon {
 }
 
 .trivaa-process-desktop .trivaa-process-step5-text {
-	left: 960px;
+	left: 950px;
 	top: 0px;
 	max-width: 500px;
 }

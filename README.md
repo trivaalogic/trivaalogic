@@ -121,5 +121,5 @@ Gap between steps: 140px
 ## Main colors:
 
 TrivaaLogic blue/green: rgb(0, 73, 100)
-TrivaaLogic light: #7aa2b2
+TrivaaLogic light: rgb(122, 162, 178)
 Highlight: rgb(250, 218, 35)

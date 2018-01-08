@@ -8,3 +8,12 @@ item_contact: Contact
 
 # Intro
 intro: Custom software for small and large businesses and individuals
+
+# Areas
+summary: We design and develop software in the following areas
+mobile_apps: Mobile applications
+web_apps: Web applications
+db_dev: Database development
+cloud: Cloud and microservices
+reveng: Reverse engineering
+support: Support and consulting

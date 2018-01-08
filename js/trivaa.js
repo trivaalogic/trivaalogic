@@ -115,8 +115,9 @@ $(function () {
       if (navbarToggler.is(':visible')) navbarToggler.click();
     });
 
-    const navbarCollapse = $('div.navbar-collapse');
-    const hammerTime = new Hammer(navbarCollapse.get(0), {
+    const navbar = $('nav.navbar');
+    const navbarCollapse = navbar.find('div.navbar-collapse');
+    const hammerTime = new Hammer(navbar.get(0), {
       recognizers: [
         [Hammer.Swipe, {
           direction: Hammer.DIRECTION_VERTICAL
@@ -124,7 +125,30 @@ $(function () {
       ]
     });
     hammerTime.on('swipe', function (e) {
-      if (e.direction == Hammer.DIRECTION_UP && navbarCollapse.is(':visible')) navbarToggler.click();
+      let visible = navbarCollapse.is(':visible');
+      if (e.direction == Hammer.DIRECTION_UP && visible || e.direction == Hammer.DIRECTION_DOWN && !visible) navbarToggler.click();
+    });
+  }
+
+  /**
+   * Sets up the navbar so that it dims when scrolled a little or when the toggler is activated..
+   */
+  function configureDimmingNavbar() {
+    const scrollThreshold = 50;
+
+    const navbar = $('nav.navbar');
+    const navbarCollapse = navbar.find('div.navbar-collapse');
+    const navbarToggler = $('button.navbar-toggler');
+
+    $(window).scroll(() => {
+      if ($(window).scrollTop() > scrollThreshold) navbar.addClass('trivaa-dimmed-navbar');
+      else if (!navbarToggler.is(':visible') || !navbarCollapse.is(':visible')) navbar.removeClass('trivaa-dimmed-navbar');
+    });
+
+    navbarToggler.click(() => {
+      let visible = navbarCollapse.is(':visible');
+      if (!visible) navbar.addClass('trivaa-dimmed-navbar');
+      else if (visible && $(window).scrollTop() <= scrollThreshold) navbar.removeClass('trivaa-dimmed-navbar');
     });
   }
 
@@ -143,4 +167,7 @@ $(function () {
 
   // Configure the navbar for mobile-specific behaviour.
   configureMobileNavbar();
+
+  // Configure the navbar to dim when needed.
+  configureDimmingNavbar();
 });

@@ -105,10 +105,11 @@ img.trivaa-facebook-icon {
  
 .trivaa-intro {
 	margin-top: 12rem;
-	padding: 0rem 1rem;
+	padding: 0px 16px;
 }
 
 .trivaa-intro > div {
+	max-width: 872px;
 	animation-name: intro-slidein;
 	animation-fill-mode: forwards;
 	animation-duration: 1.2s;
@@ -116,9 +117,15 @@ img.trivaa-facebook-icon {
 	opacity: 0;
 }
 
+@media (min-width: 872px) {
+	.trivaa-intro > div {
+		margin: auto;
+	}
+}
+
 .trivaa-intro img {
 	background-color: rgba(255, 255, 255, 0.8);
-	padding: 1rem;
+	padding: 16px;
 }
 
 .trivaa-intro h3 {
@@ -131,11 +138,14 @@ img.trivaa-facebook-icon {
 	}
 }
 
-@media (min-width: 940px) {
+@media (min-width: 1288px) {
 	@keyframes intro-slidein {
+		from {
+			margin-left: 180px;
+		}
 		to {
 			opacity: 1;
-			margin-left: 4rem;
+			margin-left: 200px;
 		}
 	}
 }

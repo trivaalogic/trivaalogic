@@ -178,3 +178,128 @@ img.trivaa-facebook-icon {
 	width: 64px;
 	margin-bottom: 1rem;
 }
+
+
+/**
+ * Process
+ */
+
+/* Container for the desktop */
+.trivaa-process-desktop {
+	width: 1600px;
+	height: 450px;
+	margin-top: 6rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (max-width: 1599px) {
+	.trivaa-process-desktop {
+		display: none;
+	}
+}
+
+/* Inner container */
+.trivaa-process-container {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/process/process-large-bg.png);
+}
+
+/* Step style */
+.trivaa-process-step {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	margin: 8px;
+
+	border-radius: 50%;
+	border-color: white;
+	border-width: 10px;
+	border-style: solid;
+
+	display: flex;
+    align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.trivaa-process-step-text {
+	position: absolute;
+}
+
+/* Step 3 is special 'cause of the arrows */
+.trivaa-process-step3 {
+	border: none;
+	background-image: url(../img/process/step-3.png);
+	background-position: center;
+}
+
+/* Step highlight */
+.trivaa-process-highlighted-step {
+	background-color: rgb(250, 218, 35);
+}
+
+/* Style of the digit */
+.trivaa-process-step span {
+	font-size: 60px;
+}
+
+/* Step positions (desktop) */
+.trivaa-process-desktop .trivaa-process-step1 {
+	left: 0px;
+	top: 0px;
+}
+
+.trivaa-process-desktop .trivaa-process-step1-text {
+	left: 216px;
+	top: 0px;
+	max-width: 500px;
+}
+
+.trivaa-process-desktop .trivaa-process-step2 {
+	left: 366px;
+	top: 314px;
+}
+
+.trivaa-process-desktop .trivaa-process-step2-text {
+	left: 0px;
+	top: 314px;
+	max-width: 350px;
+}
+
+.trivaa-process-desktop .trivaa-process-step3 {
+	left: 732px;
+	top: 0px;
+}
+
+.trivaa-process-desktop .trivaa-process-step3-text {
+	left: 650px;
+	top: 216px;
+	max-width: 350px;
+}
+
+.trivaa-process-desktop .trivaa-process-step4 {
+	left: 1098px;
+	top: 314px;
+}
+
+.trivaa-process-desktop .trivaa-process-step4-text {
+	left: 1280px;
+	top: 314px;
+	max-width: 350px;
+}
+
+.trivaa-process-desktop .trivaa-process-step5 {
+	left: 1464px;
+	top: 0px;
+}
+
+.trivaa-process-desktop .trivaa-process-step5-text {
+	left: 960px;
+	top: 0px;
+	max-width: 500px;
+}

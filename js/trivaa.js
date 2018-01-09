@@ -81,6 +81,18 @@ $(function () {
   };
 
   /**
+   * Scrolls to the specified target element smoothly.
+   * 
+   * @param {jQuery} target the target element
+   */
+  function scrollToTarget(target) {
+    const scrollTargetOffset = target.offset().top - $('.navbar').outerHeight();
+    $('html, body').animate({
+      scrollTop: scrollTargetOffset
+    }, 400);
+  }
+
+  /**
    * Configures smooth scroll of inner links within the specified container. Makes sure the location is not updated with the
    * hashtag of the anchor.
    * 
@@ -97,12 +109,7 @@ $(function () {
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 
       // Scroll to it.
-      if (target.length) {
-        var scrollTargetOffset = target.offset().top - $('.navbar').outerHeight();
-        $('html, body').animate({
-          scrollTop: scrollTargetOffset
-        }, 400);
-      }
+      if (target.length) scrollToTarget(target);
     });
   }
 
@@ -157,9 +164,14 @@ $(function () {
    */
   function configureProcessPart() {
     // Make sure that the first entry loses its active state when one step is activated with mouse hover.
-    $('.trivaa-process-desktop .trivaa-process-step').on('mouseenter', function () {
-      $('.trivaa-process-desktop .trivaa-process-step[data-step="1"]').removeClass('active');
+    $('.trivaa-process-step').on('mouseenter', function () {
+      $('.trivaa-process-step[data-step="1"]').removeClass('active');
       $(this).off('mouseenter');
+    });
+
+    // Scroll smoothly to the step when clicked.
+    $('.trivaa-process-step').click(function () {
+      scrollToTarget($(this));
     });
   }
 

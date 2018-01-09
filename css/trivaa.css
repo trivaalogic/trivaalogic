@@ -202,7 +202,7 @@ img.trivaa-facebook-icon {
 .trivaa-process-step {
 	position: absolute;
 	z-index: 9999;
-	cursor: default;
+	cursor: pointer;
 }
 
 /* Circle style */
@@ -332,10 +332,10 @@ img.trivaa-facebook-icon {
 		transform: rotate(10deg);
 	}
 	50% {
-		transform: rotate(-10deg);
+		transform: rotate(-8deg);
 	}
 	75% {
-		transform: rotate(10deg);
+		transform: rotate(6deg);
 	}
 	100% {
 		transform: rotate(0deg);

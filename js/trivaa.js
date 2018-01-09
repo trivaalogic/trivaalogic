@@ -163,13 +163,53 @@ $(function () {
    * Configures the behaviour of the process part on the desktop and the mobile.
    */
   function configureProcessPart() {
-    // Make sure that the first entry loses its active state when one step is activated with mouse hover.
-    $('.trivaa-process-step').on('mouseenter', function () {
-      $('.trivaa-process-step[data-step="1"]').removeClass('active');
-      $(this).off('mouseenter');
-    });
+    /**
+     * Deactivates all the steps which hides the text and resets the circle.
+     */
+    function deactivateAllSteps() {
+      $('.trivaa-process-step').removeClass('active');
+    }
 
+    //
+    // On the desktop, activate steps when hovering.
+    //
+    $('.trivaa-process-desktop .trivaa-process-step').on('mouseenter', function () {
+      $(this).addClass('active');
+    });
+    $('.trivaa-process-desktop .trivaa-process-step').on('mouseleave', deactivateAllSteps);
+
+    //
+    // On the mobile, activate steps when scrolling near.
+    //
+    const scrollThreshold = 200;
+    const steps = $('.trivaa-process-mobile .trivaa-process-step');
+    const navbarHeight = $('.navbar').outerHeight();
+
+    /**
+     * Activates the nearest step on scroll.
+     */
+    function activateStepOnScroll() {
+      const scrollPosition = $(window).scrollTop() + navbarHeight + scrollThreshold;
+      let activated = false;
+      for (let i = 0; i < steps.length; i++) {
+        const step = steps.eq(i);
+        const offsetTop = step.offset().top;
+        const offsetBottom = offsetTop + step.outerHeight();
+
+        if (!activated && offsetTop < scrollPosition && scrollPosition < offsetBottom) {
+          activated = true;
+          step.addClass('active');
+        } else step.removeClass('active');
+      }
+    }
+
+    // Activate the steps during scrolling, resizing and right away.
+    $(window).scroll(activateStepOnScroll).resize(activateStepOnScroll);
+    activateStepOnScroll();
+
+    //
     // Scroll smoothly to the step when clicked.
+    //
     $('.trivaa-process-step').click(function () {
       scrollToTarget($(this));
     });

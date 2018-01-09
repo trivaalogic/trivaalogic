@@ -195,7 +195,6 @@ img.trivaa-facebook-icon {
 	top: 0px;
 	width: 100%;
 	height: 100%;
-	background-image: url(../img/process/process-large-bg.png);
 }
 
 /* Area style */
@@ -259,14 +258,12 @@ img.trivaa-facebook-icon {
 }
 
 /* All steps except #3 change colour when active */
-.trivaa-process-step:not([data-step="3"]):hover + div,
 .trivaa-process-step:not([data-step="3"]).active + div {
 	background-color: rgb(250, 218, 35);
 	color: black;
 }
 
 /* All step icons (except #3) slide in from the left and have the same animation properties */
-.trivaa-process-step:not([data-step="3"]):hover + div > img,
 .trivaa-process-step:not([data-step="3"]).active + div > img {
 	left: 0px;
 	animation-delay: 400ms;
@@ -275,19 +272,16 @@ img.trivaa-facebook-icon {
 }
 
 /* All step digits (except #3) slide out to the right when active */
-.trivaa-process-step:not([data-step="3"]):hover + div > span,
 .trivaa-process-step:not([data-step="3"]).active + div > span {
 	left: 120px;
 }
 
 /* All step texts fade in when active */
-.trivaa-process-step:hover + div + div,
 .trivaa-process-step.active + div + div {
 	opacity: 1;
 }
 
 /* Step #1 */
-.trivaa-process-step[data-step="1"]:hover + div > img,
 .trivaa-process-step[data-step="1"].active + div > img {
 	animation-name: process-mail-spin;
 }
@@ -299,7 +293,7 @@ img.trivaa-facebook-icon {
 }
 
 /* Step #2 */
-.trivaa-process-step[data-step="2"]:hover + div > img {
+.trivaa-process-step[data-step="2"].active + div > img {
 	animation-name: process-bubble-pulsate;
 }
 
@@ -322,8 +316,34 @@ img.trivaa-facebook-icon {
 	}
 }
 
+/* Step #3 */
+.trivaa-process-step[data-step="3"] + div {
+	width: 136px;
+	height: 136px;
+
+	border: none;
+}
+
+.trivaa-process-step[data-step="3"].active + div {
+	background-color: rgb(250, 103, 35);
+}
+
+.trivaa-process-step[data-step="3"] + div > img {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 136px;
+	height: 136px;
+	transition-property: transform;
+	transition-duration: 800ms;
+}
+
+.trivaa-process-step[data-step="3"].active + div > img {
+	transform: rotate(270deg);
+}
+
 /* Step #4 */
-.trivaa-process-step[data-step="4"]:hover + div > img {
+.trivaa-process-step[data-step="4"].active + div > img {
 	animation-name: process-notebook-wiggle;
 }
 
@@ -343,7 +363,7 @@ img.trivaa-facebook-icon {
 }
 
 /* Step #4 */
-.trivaa-process-step[data-step="5"]:hover + div > img {
+.trivaa-process-step[data-step="5"].active + div > img {
 	animation-name: process-arrow-jump;
 }
 
@@ -394,6 +414,11 @@ hr.trivaa-process-separator-desktop {
 	}
 }
 
+/* Inner container */
+.trivaa-process-desktop .trivaa-process-container {
+	background-image: url(../img/process/process-large-bg.png);
+}
+
 /* Summary text */
 .trivaa-process-desktop h4 {
 	margin-bottom: 4rem;
@@ -418,7 +443,6 @@ hr.trivaa-process-separator-desktop {
 	max-width: 500px;
 }
 
-.trivaa-process-desktop .trivaa-process-step[data-step="1"]:hover + div + div,
 .trivaa-process-desktop .trivaa-process-step[data-step="1"].active + div + div {
 	left: 200px;
 }
@@ -442,7 +466,7 @@ hr.trivaa-process-separator-desktop {
 	max-width: 350px;
 }
 
-.trivaa-process-desktop .trivaa-process-step[data-step="2"]:hover + div + div {
+.trivaa-process-desktop .trivaa-process-step[data-step="2"].active + div + div {
 	left: 0px;
 }
 
@@ -457,28 +481,6 @@ hr.trivaa-process-separator-desktop {
 .trivaa-process-desktop .trivaa-process-step[data-step="3"] + div {
 	left: 724px;
 	top: 0px;
-	width: 136px;
-	height: 136px;
-
-	border: none;
-}
-
-.trivaa-process-desktop .trivaa-process-step[data-step="3"]:hover + div {
-	background-color: rgb(250, 103, 35);
-}
-
-.trivaa-process-desktop .trivaa-process-step[data-step="3"] + div > img {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 136px;
-	height: 136px;
-	transition-property: transform;
-	transition-duration: 800ms;
-}
-
-.trivaa-process-desktop .trivaa-process-step[data-step="3"]:hover + div > img {
-	transform: rotate(270deg);
 }
 
 .trivaa-process-desktop .trivaa-process-step[data-step="3"] + div + div {
@@ -487,7 +489,7 @@ hr.trivaa-process-separator-desktop {
 	max-width: 330px;
 }
 
-.trivaa-process-desktop .trivaa-process-step[data-step="3"]:hover + div + div {
+.trivaa-process-desktop .trivaa-process-step[data-step="3"].active + div + div {
 	top: 226;
 }
 
@@ -510,7 +512,7 @@ hr.trivaa-process-separator-desktop {
 	width: 350px;
 }	
 
-.trivaa-process-desktop .trivaa-process-step[data-step="4"]:hover + div + div {
+.trivaa-process-desktop .trivaa-process-step[data-step="4"].active + div + div {
 	left: 1280px;
 }
 
@@ -533,6 +535,135 @@ hr.trivaa-process-separator-desktop {
 	max-width: 500px;
 }	
 
-.trivaa-process-desktop .trivaa-process-step[data-step="5"]:hover + div + div {
+.trivaa-process-desktop .trivaa-process-step[data-step="5"].active + div + div {
 	left: 950px;
+}
+
+
+/*********************************************************************************************
+ * Process (mobile)
+ *********************************************************************************************/
+
+ /**
+ * Frame
+ */
+
+/* Separator */
+hr.trivaa-process-separator-mobile {
+	margin: 3rem 1rem;
+}
+
+/* Container */
+.trivaa-process-mobile {
+	width: 100%;
+	height: 1240px;
+}
+
+@media (min-width: 1600px) {
+	.trivaa-process-mobile {
+		display: none;
+	}
+
+	.trivaa-process-mobile-header {
+		display: none;
+	}
+
+	hr.trivaa-process-separator-mobile {
+		display: none;
+	}
+}
+
+/* Inner container */
+.trivaa-process-mobile .trivaa-process-container {
+	background-image: url(../img/process/process-small-bg.png);
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+/* Summary text */
+.trivaa-process-mobile-header h4 {
+	margin-bottom: 4rem;
+}
+
+/* Step sizes are all the same on the mobile */
+.trivaa-process-mobile .trivaa-process-step {
+	left: 0px;
+	width: 100%;
+	height: 276px;
+}
+
+/* Texts are always at the same horizontal location with the same dimensions */
+.trivaa-process-mobile .trivaa-process-step + div + div {
+	left: 220px;
+	padding-right: 16px;
+}
+
+.trivaa-process-mobile .trivaa-process-step.active + div + div {
+	left: 240px;
+}
+
+/* Step #1 */
+.trivaa-process-mobile .trivaa-process-step[data-step="1"] {
+	top: 0px;
+}
+
+.trivaa-process-mobile .trivaa-process-step[data-step="1"] + div {
+	left: 74px;
+	top: 0px;
+}
+
+/* Step #2 */
+.trivaa-process-mobile .trivaa-process-step[data-step="2"] {
+	top: 276px;
+}
+
+.trivaa-process-mobile .trivaa-process-step[data-step="2"] + div {
+	left: 0px;
+	top: 276px;
+}
+
+.trivaa-process-mobile .trivaa-process-step[data-step="2"] + div + div {
+	top: 276px;
+}
+
+/* Step #3 */
+.trivaa-process-mobile .trivaa-process-step[data-step="3"] {
+	top: 552px;
+}
+
+.trivaa-process-mobile .trivaa-process-step[data-step="3"] + div {
+	left: 74px;
+	top: 544px;
+}
+
+.trivaa-process-mobile .trivaa-process-step[data-step="3"] + div + div {
+	top: 552px;
+}
+
+/* Step #4 */
+.trivaa-process-mobile .trivaa-process-step[data-step="4"] {
+	top: 828px;
+}
+
+.trivaa-process-mobile .trivaa-process-step[data-step="4"] + div {
+	left: 0px;
+	top: 828px;
+}
+
+.trivaa-process-mobile .trivaa-process-step[data-step="4"] + div + div {
+	top: 828px;
+}
+
+/* Step #4 */
+.trivaa-process-mobile .trivaa-process-step[data-step="5"] {
+	top: 1104px;
+}
+
+.trivaa-process-mobile .trivaa-process-step[data-step="5"] + div {
+	left: 74px;
+	top: 1104px;
+}
+
+.trivaa-process-mobile .trivaa-process-step[data-step="5"] + div + div {
+	top: 1104px;
 }

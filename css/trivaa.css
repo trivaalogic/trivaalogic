@@ -239,11 +239,22 @@ hr.trivaa-process-separator-desktop {
 	display: flex;
     align-items: center;
 	justify-content: center;
+
+	transition-property: background-color, color;
+	transition-duration: 800ms;
+	overflow: hidden;
+}
+
+.trivaa-process-step span {
+	position: relative;
 }
 
 .trivaa-process-step-text {
 	position: absolute;
 	font-size: 14px;
+	opacity: 0;
+	transition-property: left, top, opacity;
+	transition-duration: 800ms;
 }
 
 .trivaa-process-step-area {
@@ -252,33 +263,58 @@ hr.trivaa-process-separator-desktop {
 	cursor: default;
 }
 
-/* Step highlight */
-.trivaa-process-highlighted-step {
-	background-color: rgb(250, 218, 35);
-}
-
 /* Style of the digit */
 .trivaa-process-step span {
 	font-size: 60px;
 }
 
-/* Step positions (desktop) */
+/* Step positions and animations (desktop) */
+.trivaa-process-desktop .trivaa-process-step-area[data-step="1"] {
+	left: 0px;
+	top: 0px;
+	width: 650px;
+	height: 225px;
+}
+
+.trivaa-process-desktop .trivaa-process-step-area[data-step="1"]:hover ~ .trivaa-process-step-text[data-step="1"],
+.trivaa-process-desktop .trivaa-process-step-area[data-step="1"].active ~ .trivaa-process-step-text[data-step="1"] {
+	left: 200px;
+	opacity: 1;
+}
+
+.trivaa-process-desktop .trivaa-process-step-area[data-step="1"]:hover ~ .trivaa-process-step[data-step="1"],
+.trivaa-process-desktop .trivaa-process-step-area[data-step="1"].active ~ .trivaa-process-step[data-step="1"] {
+	background-color: rgb(250, 218, 35);
+	color: black;
+}
+
 .trivaa-process-desktop .trivaa-process-step[data-step="1"] {
 	left: 0px;
 	top: 0px;
 }
 
 .trivaa-process-desktop .trivaa-process-step-text[data-step="1"] {
-	left: 200px;
+	left: 180px;
 	top: 0px;
 	max-width: 500px;
 }
 
-.trivaa-process-desktop .trivaa-process-step-area[data-step="1"] {
+
+.trivaa-process-desktop .trivaa-process-step-area[data-step="2"] {
 	left: 0px;
-	top: 0px;
-	width: 650px;
+	top: 226px;
+	width: 500px;
 	height: 225px;
+}
+
+.trivaa-process-desktop .trivaa-process-step-area[data-step="2"]:hover ~ .trivaa-process-step-text[data-step="2"] {
+	left: 0px;
+	opacity: 1;
+}
+
+.trivaa-process-desktop .trivaa-process-step-area[data-step="2"]:hover ~ .trivaa-process-step[data-step="2"] {
+	background-color: rgb(250, 218, 35);
+	color: black;
 }
 
 .trivaa-process-desktop .trivaa-process-step[data-step="2"] {
@@ -287,16 +323,31 @@ hr.trivaa-process-separator-desktop {
 }
 
 .trivaa-process-desktop .trivaa-process-step-text[data-step="2"] {
-	left: 0px;
+	left: 20px;
 	top: 314px;
 	max-width: 350px;
 }
 
-.trivaa-process-desktop .trivaa-process-step-area[data-step="2"] {
-	left: 0px;
-	top: 226px;
-	width: 500px;
-	height: 225px;
+
+.trivaa-process-desktop .trivaa-process-step-area[data-step="3"] {
+	left: 651px;
+	top: 0px;
+	width: 300px;
+	height: 450px;
+}
+
+.trivaa-process-desktop .trivaa-process-step-area[data-step="3"]:hover ~ .trivaa-process-step-text[data-step="3"] {
+	top: 226;
+	opacity: 1;
+}
+
+.trivaa-process-desktop .trivaa-process-step-area[data-step="3"]:hover ~ .trivaa-process-step[data-step="3"] {
+	background-color: rgb(250, 103, 35);
+	color: black;
+}
+
+.trivaa-process-desktop .trivaa-process-step-area[data-step="3"]:hover ~ .trivaa-process-step[data-step="3"] img {
+	transform: rotate(270deg);
 }
 
 .trivaa-process-desktop .trivaa-process-step[data-step="3"] {
@@ -306,34 +357,24 @@ hr.trivaa-process-separator-desktop {
 	height: 136px;
 
 	border: none;
-	background-image: url(../img/process/step-3.png);
-	background-position: center;
-	background-size: cover;
+}
+
+.trivaa-process-desktop .trivaa-process-step[data-step="3"] img {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 136px;
+	height: 136px;
+	transition-property: transform;
+	transition-duration: 800ms;
 }
 
 .trivaa-process-desktop .trivaa-process-step-text[data-step="3"] {
 	left: 640px;
-	top: 216px;
+	top: 246px;
 	max-width: 330px;
 }
 
-.trivaa-process-desktop .trivaa-process-step-area[data-step="3"] {
-	left: 651px;
-	top: 0px;
-	width: 300px;
-	height: 450px;
-}
-
-.trivaa-process-desktop .trivaa-process-step[data-step="4"] {
-	left: 1098px;
-	top: 314px;
-}
-
-.trivaa-process-desktop .trivaa-process-step-text[data-step="4"] {
-	left: 1280px;
-	top: 314px;
-	max-width: 350px;
-}
 
 .trivaa-process-desktop .trivaa-process-step-area[data-step="4"] {
 	left: 1090px;
@@ -342,16 +383,27 @@ hr.trivaa-process-separator-desktop {
 	height: 225px;
 }
 
-.trivaa-process-desktop .trivaa-process-step[data-step="5"] {
-	left: 1464px;
-	top: 0px;
+.trivaa-process-desktop .trivaa-process-step-area[data-step="4"]:hover ~ .trivaa-process-step-text[data-step="4"] {
+	left: 1280px;
+	opacity: 1;
 }
 
-.trivaa-process-desktop .trivaa-process-step-text[data-step="5"] {
-	left: 950px;
-	top: 0px;
-	max-width: 500px;
+.trivaa-process-desktop .trivaa-process-step-area[data-step="4"]:hover ~ .trivaa-process-step[data-step="4"] {
+	background-color: rgb(250, 218, 35);
+	color: black;
 }
+
+.trivaa-process-desktop .trivaa-process-step[data-step="4"] {
+	left: 1098px;
+	top: 314px;
+}
+
+.trivaa-process-desktop .trivaa-process-step-text[data-step="4"] {
+	left: 1260px;
+	top: 314px;
+	width: 350px;
+}	
+
 
 .trivaa-process-desktop .trivaa-process-step-area[data-step="5"] {
 	left: 951px;
@@ -359,6 +411,27 @@ hr.trivaa-process-separator-desktop {
 	width: 650px;
 	height: 225px;
 }
+
+.trivaa-process-desktop .trivaa-process-step-area[data-step="5"]:hover ~ .trivaa-process-step-text[data-step="5"] {
+	left: 950px;
+	opacity: 1;
+}
+
+.trivaa-process-desktop .trivaa-process-step-area[data-step="5"]:hover ~ .trivaa-process-step[data-step="5"] {
+	background-color: rgb(250, 218, 35);
+	color: black;
+}
+
+.trivaa-process-desktop .trivaa-process-step[data-step="5"] {
+	left: 1464px;
+	top: 0px;
+}	
+
+.trivaa-process-desktop .trivaa-process-step-text[data-step="5"] {
+	left: 970px;
+	top: 0px;
+	max-width: 500px;
+}	
 
 /* Active step styles */
 .trivaa-process-active-step {

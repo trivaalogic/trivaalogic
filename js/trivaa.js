@@ -153,9 +153,21 @@ $(function () {
   }
 
   /**
-   * Configures the behaviour of the process part on the desktop.
+   * Configures the behaviour of the process part on the desktop and the mobile.
    */
-  function configureProcessPartOnDesktop() {
+  function configureProcessPart() {
+    // Make sure that the first entry loses its active state when one step is activated with mouse hover.
+    $('.trivaa-process-desktop .trivaa-process-step-area').on('mouseenter', function () {
+      $('.trivaa-process-desktop .trivaa-process-step-area[data-step="1"]').removeClass('active');
+      $(this).off('mouseenter');
+    });
+
+    const container = $('.trivaa-process-mobile');
+    container.find('.trivaa-process-step-area').each((idx, value) => {
+      const area = $(value);
+      const stepNo = area.data('step');
+      const text = container.find(`.trivaa-process-step-text[data-step="${stepNo}"]`);
+    });
   }
 
   /**
@@ -178,5 +190,5 @@ $(function () {
   configureDimmingNavbar();
 
   // Configure the process part of the page.
-  configureProcessPartOnDesktop();
+  configureProcessPart();
 });

@@ -239,7 +239,6 @@ hr.trivaa-process-separator-desktop {
 	display: flex;
     align-items: center;
 	justify-content: center;
-	cursor: pointer;
 }
 
 .trivaa-process-step-text {
@@ -247,12 +246,10 @@ hr.trivaa-process-separator-desktop {
 	font-size: 14px;
 }
 
-/* Step 3 is special 'cause of the arrows */
-.trivaa-process-step3 {
-	border: none;
-	background-image: url(../img/process/step-3.png);
-	background-position: center;
-	background-size: cover;
+.trivaa-process-step-area {
+	position: absolute;
+	z-index: 9999;
+	cursor: default;
 }
 
 /* Step highlight */
@@ -266,59 +263,105 @@ hr.trivaa-process-separator-desktop {
 }
 
 /* Step positions (desktop) */
-.trivaa-process-desktop .trivaa-process-step1 {
+.trivaa-process-desktop .trivaa-process-step[data-step="1"] {
 	left: 0px;
 	top: 0px;
 }
 
-.trivaa-process-desktop .trivaa-process-step1-text {
+.trivaa-process-desktop .trivaa-process-step-text[data-step="1"] {
 	left: 200px;
 	top: 0px;
 	max-width: 500px;
 }
 
-.trivaa-process-desktop .trivaa-process-step2 {
+.trivaa-process-desktop .trivaa-process-step-area[data-step="1"] {
+	left: 0px;
+	top: 0px;
+	width: 650px;
+	height: 225px;
+}
+
+.trivaa-process-desktop .trivaa-process-step[data-step="2"] {
 	left: 366px;
 	top: 314px;
 }
 
-.trivaa-process-desktop .trivaa-process-step2-text {
+.trivaa-process-desktop .trivaa-process-step-text[data-step="2"] {
 	left: 0px;
 	top: 314px;
 	max-width: 350px;
 }
 
-.trivaa-process-desktop .trivaa-process-step3 {
+.trivaa-process-desktop .trivaa-process-step-area[data-step="2"] {
+	left: 0px;
+	top: 226px;
+	width: 500px;
+	height: 225px;
+}
+
+.trivaa-process-desktop .trivaa-process-step[data-step="3"] {
 	left: 724px;
 	top: 0px;
 	width: 136px;
 	height: 136px;
+
+	border: none;
+	background-image: url(../img/process/step-3.png);
+	background-position: center;
+	background-size: cover;
 }
 
-.trivaa-process-desktop .trivaa-process-step3-text {
+.trivaa-process-desktop .trivaa-process-step-text[data-step="3"] {
 	left: 640px;
 	top: 216px;
 	max-width: 330px;
 }
 
-.trivaa-process-desktop .trivaa-process-step4 {
+.trivaa-process-desktop .trivaa-process-step-area[data-step="3"] {
+	left: 651px;
+	top: 0px;
+	width: 300px;
+	height: 450px;
+}
+
+.trivaa-process-desktop .trivaa-process-step[data-step="4"] {
 	left: 1098px;
 	top: 314px;
 }
 
-.trivaa-process-desktop .trivaa-process-step4-text {
+.trivaa-process-desktop .trivaa-process-step-text[data-step="4"] {
 	left: 1280px;
 	top: 314px;
 	max-width: 350px;
 }
 
-.trivaa-process-desktop .trivaa-process-step5 {
+.trivaa-process-desktop .trivaa-process-step-area[data-step="4"] {
+	left: 1090px;
+	top: 226px;
+	width: 510px;
+	height: 225px;
+}
+
+.trivaa-process-desktop .trivaa-process-step[data-step="5"] {
 	left: 1464px;
 	top: 0px;
 }
 
-.trivaa-process-desktop .trivaa-process-step5-text {
+.trivaa-process-desktop .trivaa-process-step-text[data-step="5"] {
 	left: 950px;
 	top: 0px;
 	max-width: 500px;
+}
+
+.trivaa-process-desktop .trivaa-process-step-area[data-step="5"] {
+	left: 951px;
+	top: 0px;
+	width: 650px;
+	height: 225px;
+}
+
+/* Active step styles */
+.trivaa-process-active-step {
+	background-color: rgb(250, 218, 35);
+	color: black;
 }

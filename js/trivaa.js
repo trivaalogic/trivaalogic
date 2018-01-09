@@ -153,6 +153,12 @@ $(function () {
   }
 
   /**
+   * Configures the behaviour of the process part on the desktop.
+   */
+  function configureProcessPartOnDesktop() {
+  }
+
+  /**
    * Page initialization.
    */
 
@@ -170,4 +176,7 @@ $(function () {
 
   // Configure the navbar to dim when needed.
   configureDimmingNavbar();
+
+  // Configure the process part of the page.
+  configureProcessPartOnDesktop();
 });

@@ -157,16 +157,9 @@ $(function () {
    */
   function configureProcessPart() {
     // Make sure that the first entry loses its active state when one step is activated with mouse hover.
-    $('.trivaa-process-desktop .trivaa-process-step-area').on('mouseenter', function () {
-      $('.trivaa-process-desktop .trivaa-process-step-area[data-step="1"]').removeClass('active');
+    $('.trivaa-process-desktop .trivaa-process-step').on('mouseenter', function () {
+      $('.trivaa-process-desktop .trivaa-process-step[data-step="1"]').removeClass('active');
       $(this).off('mouseenter');
-    });
-
-    const container = $('.trivaa-process-mobile');
-    container.find('.trivaa-process-step-area').each((idx, value) => {
-      const area = $(value);
-      const stepNo = area.data('step');
-      const text = container.find(`.trivaa-process-step-text[data-step="${stepNo}"]`);
     });
   }
 

@@ -81,12 +81,32 @@ $(function () {
   };
 
   /**
+   * Height of the navbar, reused at many places.
+   */
+  const navbarHeight = $('.navbar').outerHeight();
+
+  /**
+   * Gets the viewport height.
+   * 
+   * @return {number} the viewport height
+   */
+  function viewportHeight() {
+    return window.innerHeight;
+  }
+
+  /**
    * Scrolls to the specified target element smoothly.
    * 
    * @param {jQuery} target the target element
+   * @param {object} center if truthy, the top of the element will be centered on the screen
    */
-  function scrollToTarget(target) {
-    const scrollTargetOffset = target.offset().top - $('.navbar').outerHeight();
+  function scrollToTarget(target, center) {
+    // Calculate the target offset.
+    let scrollTargetOffset;
+    if (center) scrollTargetOffset = target.offset().top - viewportHeight() / 2;
+    else scrollTargetOffset = target.offset().top - navbarHeight;
+
+    // Do the scrolling
     $('html, body').animate({
       scrollTop: scrollTargetOffset
     }, 400);
@@ -109,7 +129,7 @@ $(function () {
       target = target.length ? target : $('a[name=' + this.hash.slice(1) + ']:visible');
 
       // Scroll to it.
-      if (target.length) scrollToTarget(target);
+      if (target.length) scrollToTarget(target, target.data('scroll-center'));
     });
   }
 
@@ -182,15 +202,13 @@ $(function () {
     //
     // On the mobile, activate steps when scrolling near.
     //
-    const scrollThreshold = 200;
     const steps = $('.trivaa-process-mobile .trivaa-process-step');
-    const navbarHeight = $('.navbar').outerHeight();
 
     /**
      * Activates the nearest step on scroll.
      */
     function activateStepOnScroll() {
-      const scrollPosition = $(window).scrollTop() + navbarHeight + scrollThreshold;
+      const scrollPosition = $(window).scrollTop() + viewportHeight() / 2 + navbarHeight;
       let activated = false;
       for (let i = 0; i < steps.length; i++) {
         const step = steps.eq(i);
@@ -212,7 +230,7 @@ $(function () {
     // Scroll smoothly to the step when clicked.
     //
     $('.trivaa-process-step').click(function () {
-      scrollToTarget($(this));
+      scrollToTarget($(this), true);
     });
   }
 

@@ -106,7 +106,7 @@ $(function () {
 
       // Find the target anchor.
       var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      target = target.length ? target : $('a[name=' + this.hash.slice(1) + ']:visible');
 
       // Scroll to it.
       if (target.length) scrollToTarget(target);
@@ -141,7 +141,7 @@ $(function () {
    * Sets up the navbar so that it dims when scrolled a little or when the toggler is activated..
    */
   function configureDimmingNavbar() {
-    const scrollThreshold = 50;
+    const scrollThreshold = 0;
 
     const navbar = $('nav.navbar');
     const navbarCollapse = navbar.find('div.navbar-collapse');
@@ -174,6 +174,7 @@ $(function () {
     // On the desktop, activate steps when hovering.
     //
     $('.trivaa-process-desktop .trivaa-process-step').on('mouseenter', function () {
+      deactivateAllSteps();
       $(this).addClass('active');
     });
     $('.trivaa-process-desktop .trivaa-process-step').on('mouseleave', deactivateAllSteps);

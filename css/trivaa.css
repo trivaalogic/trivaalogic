@@ -79,6 +79,7 @@ button.navbar-toggler {
 	transition-property: background-color;
 	transition-duration: 250ms;
 	background-color: rgba(122, 162, 178, .4);
+	z-index: 10000;
 }
 
 button.navbar-toggler:focus:not(.collapsed) {
@@ -299,20 +300,16 @@ img.trivaa-facebook-icon {
 
 @keyframes process-bubble-pulsate {
 	25% {
-		width: 56px;
-		height: 56px;
+		transform: scale(1.2);
 	}
 	50% {
-		width: 48px;
-		height: 48px;
+		transform: scale(1);
 	}
 	75% {
-		width: 56px;
-		height: 56px;
+		transform: scale(1.2);
 	}
 	100% {
-		width: 48px;
-		height: 48px;
+		transform: scale(1);
 	}
 }
 
@@ -369,13 +366,13 @@ img.trivaa-facebook-icon {
 
 @keyframes process-arrow-jump {
 	25% {
-		transform: translateY(-12px);
+		transform: translateY(-6px);
 	}
 	50% {
 		transform: none;
 	}
 	75% {
-		transform: translateY(-12px);
+		transform: translateY(-6px);
 	}
 	100% {
 		transform: none;
@@ -559,6 +556,12 @@ hr.trivaa-process-separator-mobile {
 	height: 1240px;
 }
 
+@media (max-width: 740px) {
+	.trivaa-process-mobile {
+		height: 800px;
+	}
+}
+
 @media (min-width: 1600px) {
 	.trivaa-process-mobile {
 		display: none;
@@ -580,6 +583,12 @@ hr.trivaa-process-separator-mobile {
 	background-repeat: no-repeat;
 }
 
+@media (max-width: 740px) {
+	.trivaa-process-mobile .trivaa-process-container {
+		background-image: none;
+	}
+}
+
 /* Summary text */
 .trivaa-process-mobile-header h4 {
 	margin-bottom: 4rem;
@@ -592,14 +601,58 @@ hr.trivaa-process-separator-mobile {
 	height: 276px;
 }
 
+@media (max-width: 740px) {
+	.trivaa-process-mobile .trivaa-process-step {
+		height: 160px;
+	}
+}
+
+/* Circles have the same size on mobile portrait */
+@media (max-width: 740px) {
+	.trivaa-process-mobile .trivaa-process-step + div {
+		left: 0px;
+		width: 60px;
+		height: 60px;
+		border-width: 5px;
+	}
+	
+	.trivaa-process-mobile .trivaa-process-step + div > img {
+		width: 30px;
+		height: 30px;
+	}
+
+	.trivaa-process-mobile .trivaa-process-step + div > span {
+		font-size: 30px;
+	}
+}
+
 /* Texts are always at the same horizontal location with the same dimensions */
 .trivaa-process-mobile .trivaa-process-step + div + div {
 	left: 220px;
+	width: calc(100% - 240px);
+	padding-top: 16px;
 	padding-right: 16px;
 }
 
-.trivaa-process-mobile .trivaa-process-step.active + div + div {
-	left: 240px;
+@media (max-width: 740px) {
+	.trivaa-process-mobile .trivaa-process-step + div + div {
+		left: 70px;
+		width: calc(100% - 100px);
+		padding-top: 0px;
+		padding-right: 0px;
+	}
+}
+
+@media (min-width: 741px) {
+	.trivaa-process-mobile .trivaa-process-step.active + div + div {
+		left: 240px;
+	}
+}
+
+@media (max-width: 740px) {
+	.trivaa-process-mobile .trivaa-process-step.active + div + div {
+		left: 80px;
+	}
 }
 
 /* Step #1 */
@@ -607,63 +660,144 @@ hr.trivaa-process-separator-mobile {
 	top: 0px;
 }
 
-.trivaa-process-mobile .trivaa-process-step[data-step="1"] + div {
-	left: 74px;
-	top: 0px;
+@media (min-width: 741px) {
+	.trivaa-process-mobile .trivaa-process-step[data-step="1"] + div {
+		left: 74px;
+		top: 0px;
+	}
 }
 
 /* Step #2 */
 .trivaa-process-mobile .trivaa-process-step[data-step="2"] {
-	top: 276px;
+	top: 160px;
+}
+
+@media (min-width: 741px) {
+	.trivaa-process-mobile .trivaa-process-step[data-step="2"] {
+		top: 276px;
+	}
 }
 
 .trivaa-process-mobile .trivaa-process-step[data-step="2"] + div {
-	left: 0px;
-	top: 276px;
+	top: 160px;
+}
+
+@media (min-width: 741px) {
+	.trivaa-process-mobile .trivaa-process-step[data-step="2"] + div {
+		left: 0px;
+		top: 276px;
+	}
 }
 
 .trivaa-process-mobile .trivaa-process-step[data-step="2"] + div + div {
-	top: 276px;
+	top: 160px;
+}
+
+@media (min-width: 741px) {
+	.trivaa-process-mobile .trivaa-process-step[data-step="2"] + div + div {
+		top: 276px;
+	}
 }
 
 /* Step #3 */
 .trivaa-process-mobile .trivaa-process-step[data-step="3"] {
-	top: 552px;
+	top: 320px;
+}
+
+@media (min-width: 741px) {
+	.trivaa-process-mobile .trivaa-process-step[data-step="3"] {
+		top: 552px;
+	}
 }
 
 .trivaa-process-mobile .trivaa-process-step[data-step="3"] + div {
-	left: 74px;
-	top: 544px;
+	top: 320px;
+}
+
+@media (min-width: 741px) {
+	.trivaa-process-mobile .trivaa-process-step[data-step="3"] + div {
+		left: 74px;
+		top: 544px;
+	}
+}
+
+@media (max-width: 740px) {
+	.trivaa-process-mobile .trivaa-process-step[data-step="3"] + div > img {
+		width: 60px;
+		height: 60px;
+	}
 }
 
 .trivaa-process-mobile .trivaa-process-step[data-step="3"] + div + div {
-	top: 552px;
+	top: 320px;
+}
+
+@media (min-width: 741px) {
+	.trivaa-process-mobile .trivaa-process-step[data-step="3"] + div + div {
+		top: 552px;
+	}
 }
 
 /* Step #4 */
 .trivaa-process-mobile .trivaa-process-step[data-step="4"] {
-	top: 828px;
+	top: 480px;
+}
+
+@media (min-width: 741px) {
+	.trivaa-process-mobile .trivaa-process-step[data-step="4"] {
+		top: 828px;
+	}
 }
 
 .trivaa-process-mobile .trivaa-process-step[data-step="4"] + div {
-	left: 0px;
-	top: 828px;
+	top: 480px;
+}
+
+@media (min-width: 741px) {
+	.trivaa-process-mobile .trivaa-process-step[data-step="4"] + div {
+		left: 0px;
+		top: 828px;
+	}
 }
 
 .trivaa-process-mobile .trivaa-process-step[data-step="4"] + div + div {
-	top: 828px;
+	top: 480px;
 }
 
-/* Step #4 */
+@media (min-width: 741px) {
+	.trivaa-process-mobile .trivaa-process-step[data-step="4"] + div + div {
+		top: 828px;
+	}
+}
+
+/* Step #5 */
 .trivaa-process-mobile .trivaa-process-step[data-step="5"] {
-	top: 1104px;
+	top: 640px;
+}
+
+@media (min-width: 741px) {
+	.trivaa-process-mobile .trivaa-process-step[data-step="5"] {
+		top: 1104px;
+	}
 }
 
 .trivaa-process-mobile .trivaa-process-step[data-step="5"] + div {
-	left: 74px;
-	top: 1104px;
+	top: 640px;
+}
+
+@media (min-width: 741px) {
+	.trivaa-process-mobile .trivaa-process-step[data-step="5"] + div {
+		left: 74px;
+		top: 1104px;
+	}
 }
 
 .trivaa-process-mobile .trivaa-process-step[data-step="5"] + div + div {
-	top: 1104px;
+	top: 640px;
+}
+
+@media (min-width: 741px) {
+	.trivaa-process-mobile .trivaa-process-step[data-step="5"] + div + div {
+		top: 1104px;
+	}
 }

@@ -34,6 +34,7 @@ nav.navbar {
 	padding: 0px;
 	transition-property: background-color;
 	transition-duration: 250ms;
+	z-index: 10000;
 }
 
 nav.navbar.trivaa-dimmed-navbar {
@@ -82,7 +83,6 @@ button.navbar-toggler {
 	transition-property: background-color;
 	transition-duration: 250ms;
 	background-color: rgba(122, 162, 178, .4);
-	z-index: 10000;
 }
 
 button.navbar-toggler:focus:not(.collapsed) {
@@ -216,7 +216,7 @@ img.trivaa-facebook-icon {
 /* Area style */
 .trivaa-process-step {
 	position: absolute;
-	z-index: 9999;
+	z-index: 5000;
 	cursor: pointer;
 }
 

@@ -239,6 +239,7 @@ img.trivaa-facebook-icon {
 	transition-property: background-color, color;
 	transition-duration: 800ms;
 	overflow: hidden;
+	z-index: 200;
 }
 
 /* Text style */
@@ -257,6 +258,7 @@ img.trivaa-facebook-icon {
 	font-size: 60px;
 	transition-property: left;
 	transition-duration: 400ms;
+	z-index: 100;
 }
 
 /* Style of the icon when off-screen */
@@ -271,6 +273,7 @@ img.trivaa-facebook-icon {
 	margin: auto;
 	transition-property: left;
 	transition-duration: 400ms;
+	z-index: 100;
 }
 
 /* All steps except #3 change colour when active */

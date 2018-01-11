@@ -38,7 +38,7 @@
             <li class="nav-item d-md-none text-center py-4">
                 {% for lang in site.languages %}
                     {% assign page_path = lang %}
-                    {% if lang == 'hu' %}
+                    {% if lang == site.default_lang %}
                         {% assign page_path = "" %}
                     {% endif %}
                 <a class="nav-link d-inline mx-4" href="{{ page_path | absolute_url }}">
@@ -48,8 +48,9 @@
             </li>
 
             <!-- Language selectors (>=md) -->
-            {% for lang in site.languages %} {% assign page_path = lang %}
-                {% if lang == 'hu' %}
+            {% for lang in site.languages %}
+                {% assign page_path = lang %}
+                {% if lang == site.default_lang %}
                     {% assign page_path = "" %}
                 {% endif %}
             <li class="nav-item d-none d-md-inline">

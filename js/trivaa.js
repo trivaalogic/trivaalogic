@@ -256,3 +256,14 @@ $(function () {
   // Configure the process part of the page.
   configureProcessPart();
 });
+
+/**
+ * Ask for Offer form.
+ */
+$(function() {
+  // Hide the navbar on the button click.
+  const navbarToggler = $('button.navbar-toggler');
+  $('button.trivaa-ask-for-offer').click(() => {
+    if (navbarToggler.is(':visible')) navbarToggler.click();
+  });
+});

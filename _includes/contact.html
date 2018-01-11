@@ -2,7 +2,23 @@
 <div class="trivaa-contact">
 	<div class="container">
 		<div class="row">
-			<div class="col">
+			<div class="col-4 d-flex d-flex-column align-items-center">
+				<img class="img-fluid m-auto" src="{{ page.permalink }}img/logo-inverted.png">
+			</div>
+			<div class="col-8 d-flex d-flex-column align-items-center">
+				<ul class="list-group">
+					<li class="list-group-item"><h4>{{ site.data.texts.company_name }}</h4></li>
+					<li class="list-group-item"><h6>{{ site.data.texts.company_postal_address }}</h6></li>
+					<li class="list-group-item">
+						<a href="mail:info@trivaalogic.hu"><img class="img-fluid" src="{{ page.permalink }}img/process/step-1.png">info@trivaalogic.hu</a>
+					</li>
+					<li class="list-group-item">
+						<a href="tel:+36202118338"><img class="img-fluid" src="{{ page.permalink }}img/telephone.png">+36 20 211 8338</a>
+					</li>
+					<li class="list-group-item">
+						<a href="https://www.facebook.com/trivaalogic" target="_blank"><img class="img-fluid" src="{{ page.permalink }}img/facebook-icon.png">@trivaalogic</a>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>

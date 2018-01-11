@@ -215,7 +215,7 @@ $(function () {
         const offsetTop = step.offset().top;
         const offsetBottom = offsetTop + step.outerHeight();
 
-        if (!activated && offsetTop < scrollPosition && scrollPosition < offsetBottom) {
+        if (!activated && (i == 0 || offsetTop < scrollPosition) && (i == steps.length - 1 || scrollPosition < offsetBottom)) {
           activated = true;
           step.addClass('active');
         } else step.removeClass('active');

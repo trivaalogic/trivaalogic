@@ -10,6 +10,7 @@ $trivaa-base-color: rgb(0, 73, 100);
 $trivaa-highlight-color: rgb(250, 218, 35);
 
 $mobile-menu-color: rgb(122, 162, 178);
+$text-color-dark: rgb(83, 83, 83);
 
 /* Font sizing */
 $nav-font-size: 14px;
@@ -108,14 +109,19 @@ button.navbar-toggler {
 	transition-property: background-color;
 	transition-duration: 250ms;
 	background-color: rgba($mobile-menu-color, .4);
+	outline: none !important;
 }
 
 button.navbar-toggler:focus:not(.collapsed) {
 	background-color: $trivaa-highlight-color;
 	border: none;
-	outline: none;
+	outline: none !important;
 	transition-property: background-color;
 	transition-duration: 250ms;
+}
+
+button.navbar-toggler:active {
+	outline: none !important;
 }
 
 /** Flags on dektop and mobile */
@@ -148,8 +154,14 @@ img.trivaa-facebook-icon {
  *********************************************************************************************/
  
 .trivaa-intro {
-	margin-top: 12rem;
+	margin-top: 360px;
 	padding: 0px 16px;
+}
+
+@media (max-width: $process-mobile-landscape-breakpoint) {
+	.trivaa-intro {
+		margin-top: 192px;
+	}
 }
 
 .trivaa-intro > div {
@@ -449,20 +461,24 @@ hr.trivaa-process-separator-desktop {
 		display: none;
 	}
 
+	.trivaa-process-desktop-header {
+		display: none;
+	}
+
 	hr.trivaa-process-separator-desktop {
 		display: none;
 	}
+}
+
+/* Summary text */
+.trivaa-process-desktop-header h4 {
+	margin-bottom: 4rem;
 }
 
 /* Inner container */
 .trivaa-process-desktop {
 	.trivaa-process-container {
 		background-image: url(../img/process/process-large-bg.png);
-	}
-
-	/* Summary text */
-	h4 {
-		margin-bottom: 4rem;
 	}
 
 	/* Step #1 */
@@ -847,4 +863,29 @@ hr.trivaa-process-separator-mobile {
 			top: 1104px;
 		}
 	}
+}
+
+
+/*********************************************************************************************
+ * About
+ *********************************************************************************************/
+
+.trivaa-about {
+	margin-top: 4rem;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	background-color: white;
+	color: $text-color-dark;
+}
+
+
+/*********************************************************************************************
+ * Contact
+ *********************************************************************************************/
+
+.trivaa-contact {
+	padding-top: 8rem;
+	padding-bottom: 4rem;
+	background-color: white;
+	color: $text-color-dark;
 }

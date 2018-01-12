@@ -266,4 +266,9 @@ $(function() {
   $('button.trivaa-ask-for-offer').click(() => {
     if (navbarToggler.is(':visible')) navbarToggler.click();
   });
+
+  $('.trivaa-ask-for-offer').click(() => {
+    const form = $('.trivaa-offer-form');
+    form.toggleClass('trivaa-offer-form-hidden');
+  });
 });

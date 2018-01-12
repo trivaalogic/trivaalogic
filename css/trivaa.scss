@@ -11,8 +11,6 @@ $trivaa-light-color: rgb(122, 162, 178);
 $trivaa-highlight-color: rgb(250, 218, 35);
 $trivaa-light-background-color: darken(white, 3%);
 
-$button-primary-color: rgb(160, 59, 0);
-
 $mobile-menu-color: rgb(122, 162, 178);
 $text-color-dark: rgb(83, 83, 83);
 
@@ -962,11 +960,8 @@ hr.trivaa-process-separator-mobile {
  * Ask for Offer
  *********************************************************************************************/
 
+/* Button styles */
 button.trivaa-ask-for-offer {
-	background-color: $button-primary-color;
-	border-color: $text-color-dark;
-	border-width: 1px;
-	border-radius: 4px;
 	font-weight: bold;
 	padding-left: 1rem;
 	padding-right: 1rem;
@@ -980,15 +975,23 @@ button.trivaa-ask-for-offer {
 	}
 }
 
-button.trivaa-ask-for-offer:hover {
-	background-color: lighten($button-primary-color, 10%);
-	border-color: lighten($button-primary-color, 10%);
+div.trivaa-offer-form {
+	position: fixed;
+	left: 0px;
+	top: 80px;
+	width: 1000px;
+	height: 600px;
+	border: 2px solid white;
+	border-left: none;
+	border-top-right-radius: 32px;
+	border-bottom-right-radius: 32px;
+	background-color: rgba(0, 0, 0, .4);
+	transition-property: left;
+	transition-duration: 400ms;
+
+	z-index: 7500;
 }
 
-div.modal-dialog {
-	background-color: $trivaa-light-background-color;
-
-	.modal-content {
-		background-color: inherit;
-	}
+div.trivaa-offer-form-hidden {
+	left: -1000px;
 }

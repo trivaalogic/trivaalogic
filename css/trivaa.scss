@@ -1195,11 +1195,11 @@ div.trivaa-offer-form {
 
 		padding: 0px 32px;
 
-		a {
+		a:not(.action-button) {
 			color: $trivaa-light-color;
 		}
 
-		a:hover {
+		a:not(.action-button):hover {
 			color: $trivaa-special-highlight-color;
 		}
 	}

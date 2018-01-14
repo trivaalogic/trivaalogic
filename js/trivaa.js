@@ -344,13 +344,21 @@ $(function () {
 
   // Submit button logic.
   form.find('a#sendOfferRequest').click(() => {
+    // Collect the form contents.
+    const emailInput = form.find('input#contactEmail');
+    const emailAddress = emailInput.val().trim();
+    const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (!emailAddress || !re.test(emailAddress)) {
+      emailInput.focus();
+      return;
+    }
+
     // Hide the form content.
     form.find('.form-content').addClass('content-hide');
 
     // Show the spinner.
     form.find('.form-spinner').addClass('additional-content-show');
 
-    // Collect the form contents.
     const offerRequest = {
       software: {
         mobile: form.find('a#softwareKindMobile').hasClass('selected-anchor'),
@@ -359,32 +367,39 @@ $(function () {
         other: form.find('a#softwareKindOther').hasClass('selected-anchor') && form.find('input#softwareKindOtherText').val()
       },
       reverseEngineering: form.find('a#existingReveng').hasClass('selected-anchor'),
-      emailAddress: form.find('input#contactEmail').val()
+      emailAddress: emailAddress
     };
 
     // Send the request.
     requestRunning = true;
+    const responseDelay = 400;
     $.ajax('https://trivaacloud1.trivaalogic.com:8998/offerservice', {
       method: 'POST',
       data: offerRequest,
       dataType: 'json'
     }).done((msg) => {
       // Display the outcome.
-      submitComplete.find('span').hide();
-      if (msg == 'ok') submitComplete.find('span#submitSuccess').show();
-      else submitComplete.find('span#submitFail').show();
+      setTimeout(() => {
+        submitComplete.find('span').hide();
+        if (msg == 'ok') submitComplete.find('span#submitSuccess').show();
+        else submitComplete.find('span#submitFail').show();
+      }, responseDelay);
     }).fail(() => {
-      submitComplete.find('span').hide();
-      submitComplete.find('span#submitFail').show();
+      setTimeout(() => {
+        submitComplete.find('span').hide();
+        submitComplete.find('span#submitFail').show();
+      }, responseDelay);
     }).always(() => {
-      // Show the message.
-      submitComplete.addClass('additional-content-show');
-      
-      // Hide the spinner.
-      form.find('.form-spinner').removeClass('additional-content-show');
+      setTimeout(() => {
+        // Show the message.
+        submitComplete.addClass('additional-content-show');
 
-      // Update the state.
-      requestRunning = false;
+        // Hide the spinner.
+        form.find('.form-spinner').removeClass('additional-content-show');
+
+        // Update the state.
+        requestRunning = false;
+      }, responseDelay);
     });
   });
 });

@@ -364,7 +364,7 @@ $(function () {
         mobile: form.find('a#softwareKindMobile').hasClass('selected-anchor'),
         web: form.find('a#softwareKindWeb').hasClass('selected-anchor'),
         database: form.find('a#softwareKindDatabase').hasClass('selected-anchor'),
-        other: form.find('a#softwareKindOther').hasClass('selected-anchor') && form.find('input#softwareKindOtherText').val()
+        other: form.find('a#softwareKindOther').hasClass('selected-anchor') && form.find('input#softwareKindOtherText').val().trim()
       },
       reverseEngineering: form.find('a#existingReveng').hasClass('selected-anchor'),
       emailAddress: emailAddress

@@ -267,6 +267,7 @@ $(function () {
  * Ask for Offer form.
  */
 $(function () {
+  let requestRunning = false;
   const form = $('.trivaa-offer-form');
   const overlay = $('.trivaa-offer-form-overlay');
   const button = $('button.trivaa-ask-for-offer');
@@ -274,8 +275,20 @@ $(function () {
   // Hide the navbar, enable the blur effect and show the form when clicking the button.
   const navbarToggler = $('button.navbar-toggler');
   button.click(() => {
-    // Hide the collapsible mobile navbar, if it's visible.
-    if (navbarToggler.is(':visible') && form.hasClass('form-hidden')) navbarToggler.click();
+    // Initialize form display, depending on state.
+    if (form.hasClass('form-hidden')) {
+      // Hide the collapsible mobile navbar, if it's visible.
+      if (navbarToggler.is(':visible')) navbarToggler.click();
+
+      // Reset the form if no request is running.
+      if (!requestRunning) {
+        // Show the form content.
+        form.find('.form-content').removeClass('content-hide');
+  
+        // Hide additional content.
+        form.find('.additional-content-show').removeClass('additional-content-show');
+      }
+    }
 
     // Blur/unblur the main content.
     $('div#mainContent').toggleClass('blur');
@@ -305,8 +318,8 @@ $(function () {
     if (e.direction == Hammer.DIRECTION_LEFT) button.click();
   });
 
-  // Anchors in form sections mark their selection, except for action buttons.
-  form.find('div.form-section a').click(function (e) {
+  // Anchors mark their selection, except for action buttons.
+  form.find('a').click(function (e) {
     e.preventDefault();
     const anchor = $(this);
     if (!anchor.hasClass('action-button')) {
@@ -326,5 +339,25 @@ $(function () {
   // The close button also hides the form.
   form.find('a#closeForm').click(() => {
     if (!form.hasClass('form-hidden')) button.click();
+  });
+
+  // Submit button logic.
+  form.find('a#sendOfferRequest').click(() => {
+    // Hide the form content.
+    form.find('.form-content').addClass('content-hide');
+
+    // Show the spinner.
+    form.find('.form-spinner').addClass('additional-content-show');
+
+    // Send the request.
+    requestRunning = true;
+    setTimeout(() => {
+      // Hide the spinner.
+      form.find('.form-spinner').removeClass('additional-content-show');
+      
+      // Show the message.
+      form.find('.form-submit-complete').addClass('additional-content-show');
+      requestRunning = false;
+    }, 1000);
   });
 });

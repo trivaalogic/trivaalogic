@@ -1060,15 +1060,6 @@ div.trivaa-offer-form {
 
 	z-index: 7500;
 
-	/* General style for a form section */
-	div.form-section {
-		margin-top: 4rem;
-
-		h5 {
-			margin-bottom: 1rem;
-		}
-	}
-
 	/* Anchor and button styles */
 	a, input {
 		display: block;
@@ -1103,34 +1094,6 @@ div.trivaa-offer-form {
 		padding: 8px 40px;
 	}
 
-	/* Override for the 'Other...' software kind */
-	input#softwareKindOtherText {
-		visibility: hidden;
-		opacity: 0;
-		width: 25rem;
-		transition-property: opacity;
-		transition-duration: 400ms;
-	}
-
-	input#softwareKindOtherText.input-active {
-		visibility: visible;
-		opacity: 1;
-	}
-
-	/* Override for the email input */
-	input#contactEmail {
-		width: 32rem;
-	}
-
-	/* Override for the submit button */
-	a#sendOfferRequest.action-button {
-		background-color: $bootstrap-successbutton-color;
-	}
-
-	a#sendOfferRequest.action-button:hover {
-		background-color: darken($bootstrap-successbutton-color, 8%);
-	}
-
 	/* Override for the close button */
 	a#closeForm.action-button {
 		background-color: $trivaa-special-highlight-color;
@@ -1143,6 +1106,96 @@ div.trivaa-offer-form {
 
 	a#closeForm.action-button:hover {
 		background-color: darken($trivaa-special-highlight-color, 8%);
+	}
+
+	/* Form content style */
+	div.form-content {
+		transition-property: opacity;
+		transition-duration: 400ms;
+
+		/* General style for a form section */
+		div.form-section {
+			margin-top: 4rem;
+	
+			h5 {
+				margin-bottom: 1rem;
+			}
+		}
+	
+		/* Override for the 'Other...' software kind */
+		input#softwareKindOtherText {
+			visibility: hidden;
+			opacity: 0;
+			width: 25rem;
+			transition-property: opacity;
+			transition-duration: 400ms;
+		}
+	
+		input#softwareKindOtherText.input-active {
+			visibility: visible;
+			opacity: 1;
+		}
+	
+		/* Override for the email input */
+		input#contactEmail {
+			width: 32rem;
+		}
+	
+		/* Override for the submit button */
+		a#sendOfferRequest.action-button {
+			background-color: $bootstrap-successbutton-color;
+		}
+	
+		a#sendOfferRequest.action-button:hover {
+			background-color: darken($bootstrap-successbutton-color, 8%);
+		}
+	}
+
+	/* Helper class to hide the content */
+	div.content-hide {
+		opacity: 0;
+	}
+
+
+	/* Spinner style */
+	div.form-spinner {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		
+		transition-property: opacity;
+		transition-duration: 400ms;
+		visibility: hidden;
+		opacity: 0;
+
+		background-image: url(../img/spinner.gif);
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	
+	/* Submit outcome message styles */
+	div.form-submit-complete {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		
+		transition-property: opacity;
+		transition-duration: 400ms;
+		visibility: hidden;
+		opacity: 0;
+		vertical-align: middle;
+
+		padding: 0px 32px;
+	}
+
+	/* Helper to show additional content */
+	div.additional-content-show {
+		visibility: visible;
+		opacity: 1;
 	}
 }
 

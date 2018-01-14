@@ -1065,7 +1065,7 @@ div.trivaa-offer-form {
 	z-index: 7500;
 
 	/* Anchor and button styles */
-	a, input {
+	a:not(.normal-anchor), input {
 		display: block;
 		border: 2px solid white;
 		border-radius: 8px;
@@ -1075,7 +1075,7 @@ div.trivaa-offer-form {
 		margin: 4px;
 	}
 
-	a {
+	a:not(.normal-anchor) {
 		font-size: 14px;
 		cursor: pointer;
 
@@ -1089,12 +1089,12 @@ div.trivaa-offer-form {
 		}
 	}
 	
-	a.selected-anchor {
+	a:not(.normal-anchor).selected-anchor {
 		background-color: $trivaa-light-color;
 	}
 
 	/* Action buttons are wider */
-	a.action-button {
+	a:not(.normal-anchor).action-button {
 		padding: 8px 40px;
 	}
 
@@ -1194,6 +1194,14 @@ div.trivaa-offer-form {
 		vertical-align: middle;
 
 		padding: 0px 32px;
+
+		a {
+			color: $trivaa-light-color;
+		}
+
+		a:hover {
+			color: $trivaa-special-highlight-color;
+		}
 	}
 
 	/* Helper to show additional content */

@@ -271,6 +271,7 @@ $(function () {
   const form = $('.trivaa-offer-form');
   const overlay = $('.trivaa-offer-form-overlay');
   const button = $('button.trivaa-ask-for-offer');
+  const submitComplete = form.find('.form-submit-complete');
 
   // Hide the navbar, enable the blur effect and show the form when clicking the button.
   const navbarToggler = $('button.navbar-toggler');
@@ -284,7 +285,7 @@ $(function () {
       if (!requestRunning) {
         // Show the form content.
         form.find('.form-content').removeClass('content-hide');
-  
+
         // Hide additional content.
         form.find('.additional-content-show').removeClass('additional-content-show');
       }
@@ -349,15 +350,41 @@ $(function () {
     // Show the spinner.
     form.find('.form-spinner').addClass('additional-content-show');
 
+    // Collect the form contents.
+    const offerRequest = {
+      software: {
+        mobile: form.find('a#softwareKindMobile').hasClass('selected-anchor'),
+        web: form.find('a#softwareKindWeb').hasClass('selected-anchor'),
+        database: form.find('a#softwareKindDatabase').hasClass('selected-anchor'),
+        other: form.find('a#softwareKindOther').hasClass('selected-anchor') && form.find('input#softwareKindOtherText').val()
+      },
+      reverseEngineering: form.find('a#existingReveng').hasClass('selected-anchor'),
+      emailAddress: form.find('input#contactEmail').val()
+    };
+
     // Send the request.
     requestRunning = true;
-    setTimeout(() => {
+    $.ajax('https://trivaacloud1.trivaalogic.com:8998/offerservice', {
+      method: 'POST',
+      data: offerRequest,
+      dataType: 'json'
+    }).done((msg) => {
+      // Display the outcome.
+      submitComplete.find('span').hide();
+      if (msg == 'ok') submitComplete.find('span#submitSuccess').show();
+      else submitComplete.find('span#submitFail').show();
+    }).fail(() => {
+      submitComplete.find('span').hide();
+      submitComplete.find('span#submitFail').show();
+    }).always(() => {
+      // Show the message.
+      submitComplete.addClass('additional-content-show');
+      
       // Hide the spinner.
       form.find('.form-spinner').removeClass('additional-content-show');
-      
-      // Show the message.
-      form.find('.form-submit-complete').addClass('additional-content-show');
+
+      // Update the state.
       requestRunning = false;
-    }, 1000);
+    });
   });
 });

@@ -57,10 +57,11 @@
 	<div class="form-spinner"></div>
 	<div class="form-submit-complete d-flex align-items-center">
 		<div class="d-flex flex-column align-items-center">
-			<span>{{ site.data.texts.submit_success }}</span>
+			<span id="submitSuccess">{{ site.data.texts.submit_success }}</span>
+			<span id="submitFail">{{ site.data.texts.submit_fail }}:<br/><a class="normal-anchor" href="mailto:info@trivaalogic.hu">info@trivaalogic.hu</a></span>
 			<a id="closeForm" class="action-button mt-5" href="#">
 				<img src="{{ page.permalink }}img/close-icon.png">
-				<span>{{ site.data.texts.offer_close }}</span>
+				{{ site.data.texts.offer_close }}
 			</a>
 		</div>
 	</div>

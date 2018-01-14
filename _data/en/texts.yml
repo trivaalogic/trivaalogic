@@ -115,3 +115,4 @@ offer_send: Submit
 offer_close: Close
 
 submit_success: The offer request has been sent successfully. We'll contact you soon to discuss the next steps. Thank you for approaching us!
+submit_fail: Unfortunately we could not send the offer. This is a problem on our side. Apologies! You can still get in contact with us via email

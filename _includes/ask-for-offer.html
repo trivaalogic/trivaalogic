@@ -1,3 +1,57 @@
-<div class="trivaa-offer-form trivaa-offer-form-hidden">
-
+<div class="trivaa-offer-form-overlay"></div>
+<div class="trivaa-offer-form form-hidden">
+	<div class="form-content">
+		<div class="form-section">
+			<h5>{{ site.data.texts.question_kind }}</h5>
+			<div class="w-100 d-flex flex-wrap justify-content-between">
+				<a id="softwareKindMobile" href="#">
+					<img src="{{ page.permalink }}img/areas/mobile.png">
+					<span>{{ site.data.texts.software_kind_mobile }}</span>
+				</a>
+				<a id="softwareKindWeb" href="#">
+					<img src="{{ page.permalink }}img/areas/web.png">
+					<span>{{ site.data.texts.software_kind_web }}</span>
+				</a>
+				<a id="softwareKindDatabase" href="#">
+					<img src="{{ page.permalink }}img/areas/database.png">
+					<span>{{ site.data.texts.software_kind_database }}</span>
+				</a>
+			</div>
+			<div class="w-100 d-flex flex-wrap justify-content-between mt-4">
+				<a id="softwareKindOther">
+					<span>{{ site.data.texts.software_kind_other }}...</span>
+				</a>
+				<input id="softwareKindOtherText" type="text" placeholder="{{ site.data.texts.software_kind_other_hint }}" />
+			</div>
+		</div>
+		<div class="form-section">
+			<h5>{{ site.data.texts.question_existing }}</h5>
+			<div class="w-100 d-flex flex-wrap justify-content-between">
+				<a id="existingNone" class="selected-anchor" data-button-group="existing" href="#">
+					<span>{{ site.data.texts.existing_none }}</span>
+				</a>
+				<a id="existingReveng" data-button-group="existing" href="#">
+					<span>{{ site.data.texts.existing_reveng }}</span>
+				</a>
+			</div>
+		</div>
+		<div class="form-section">
+			<h5>{{ site.data.texts.contact_method }}</h5>
+			<div class="w-100 d-flex flex-wrap justify-content-around">
+				<input id="contactEmail" type="email" autocomplete="email" placeholder="{{ site.data.texts.contact_email }}" />
+			</div>
+		</div>
+		<div class="form-section">
+			<div class="w-100 d-flex flex-wrap justify-content-around">
+				<a id="sendOfferRequest" class="action-button" href="#">
+					<img src="{{ page.permalink }}img/submit-icon.png">
+					<span>{{ site.data.texts.offer_send }}</span>
+				</a>
+				<a id="closeForm" class="action-button" href="#">
+					<img src="{{ page.permalink }}img/close-icon.png">
+					<span>{{ site.data.texts.offer_close }}</span>
+				</a>
+			</div>
+		</div>
+	</div>
 </div>

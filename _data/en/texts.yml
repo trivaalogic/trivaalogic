@@ -96,3 +96,20 @@ created_by: Site created by TrivaaLogic Ltd.
 
 # Ask for Offer
 ask_for_offer: Ask for Offer
+
+question_kind: What kind of software do you need?
+software_kind_mobile: Mobile application
+software_kind_web: Web application
+software_kind_database: Database software
+software_kind_other: Other
+software_kind_other_hint: ex. desktop, embedded, etc.
+
+question_existing: Are there any existing software to build upon?
+existing_none: No, new software is needed
+existing_reveng: Yes, I have software to rewrite/modify
+
+contact_method: How can we contact you?
+contact_email: Please enter your email address
+
+offer_send: Submit
+offer_close: Close

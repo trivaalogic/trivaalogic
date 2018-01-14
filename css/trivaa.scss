@@ -2,19 +2,22 @@
 ---
 
 /*********************************************************************************************
- * Layout variables
+ * Layout variables and mixins
  *********************************************************************************************/
 
 /* Colors */
 $trivaa-base-color: rgb(0, 73, 100);
 $trivaa-light-color: rgb(122, 162, 178);
 $trivaa-highlight-color: rgb(250, 218, 35);
+$trivaa-special-highlight-color: rgb(250, 103, 35);
 $trivaa-light-background-color: darken(white, 3%);
 
 $mobile-menu-color: rgb(122, 162, 178);
 $text-color-dark: rgb(83, 83, 83);
 
 $footer-background-color: rgb(83, 83, 83);
+
+$bootstrap-successbutton-color: rgb(40, 167, 69);
 
 /* Font sizing */
 $nav-font-size: 14px;
@@ -27,8 +30,25 @@ $bootstrap-md-breakpoint: 768px;
 $process-desktop-breakpoint: 1600px;
 $process-mobile-landscape-breakpoint: 740px;
 
+
 /* Individual sizes */
 $process-step-mobile-portrait-size: 80px;
+$offer-form-width: 600px;
+$offer-form-height: 700px;
+
+@mixin trivaa-filter($filter) {
+	-webkit-filter: $filter;
+	-moz-filter: $filter;
+	-o-filter: $filter;
+	-ms-filter: $filter;
+	filter: $filter;
+}
+
+@mixin trivaa-user-select($userSelect) {
+	-moz-user-select: $userSelect !important;
+	-webkit-user-select: $userSelect !important;
+	user-select: $userSelect !important;
+}
 
 
 /*********************************************************************************************
@@ -39,6 +59,14 @@ body {
 	background-color: $trivaa-base-color;
 	color: white;
 	font-family: 'Oxygen', sans-serif;
+}
+
+div#bgImage {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 1100px;
 	background-image: url(../img/background-large.png);
 	background-position-x: right;
 	background-position-y: top;
@@ -46,8 +74,9 @@ body {
 }
 
 @media (max-width: $background-breakpoint) {
-	body {
+	div#bgImage {
 		background-image: url(../img/background-small.png);
+		height: 688px;
 	}
 }
 
@@ -65,12 +94,15 @@ hr {
 }
 
 img {
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	user-select: none;
+	@include trivaa-user-select(none);
 }
 
 button:active, button:focus, a, a:hover, a:active {
+	outline: none !important;
+	@include trivaa-user-select(none);
+}
+
+input, input:active {
 	outline: none !important;
 }
 
@@ -396,7 +428,7 @@ img.trivaa-facebook-icon {
 }
 
 .trivaa-process-step[data-step="3"].active + div {
-	background-color: rgb(250, 103, 35);
+	background-color: $trivaa-special-highlight-color;
 }
 
 .trivaa-process-step[data-step="3"] + div > img {
@@ -923,8 +955,7 @@ hr.trivaa-process-separator-mobile {
 				width: 32px;
 				height: 32px;
 				margin-right: 1rem;
-				-webkit-filter: grayscale(100%);
-				filter: grayscale(100%);
+				@include trivaa-filter(grayscale(100%));
 			}
 		}
 	}
@@ -946,8 +977,7 @@ hr.trivaa-process-separator-mobile {
 	 }
 
 	 img {
-		 -webkit-filter: brightness(60%) grayscale(100%);
-		 filter: brightness(60%) grayscale(100%);
+		 @include trivaa-filter(brightness(60%) grayscale(100%));
 		 height: 40px;
 		 width: auto;
 		 margin: auto;
@@ -959,6 +989,28 @@ hr.trivaa-process-separator-mobile {
 /*********************************************************************************************
  * Ask for Offer
  *********************************************************************************************/
+
+div#mainContent.blur {
+	animation-name: main-content-blur;
+	animation-fill-mode: backwards;
+	animation-duration: 400ms;
+}
+
+div#mainContent.blur {
+	animation-name: main-content-blur;
+	animation-fill-mode: forwards;
+	animation-duration: 400ms;
+}
+
+@keyframes main-content-blur {
+	from {
+		@include trivaa-filter(none);
+	}
+
+	to {
+		@include trivaa-filter(blur(6px));
+	}
+}
 
 /* Button styles */
 button.trivaa-ask-for-offer {
@@ -975,23 +1027,163 @@ button.trivaa-ask-for-offer {
 	}
 }
 
+/* Overlay and its active helper style */
+div.trivaa-offer-form-overlay {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 0%;
+	height: 0%;
+	z-index: 7000;
+}
+
+div.overlay-active {
+	width: 100%;
+	height: 100%;
+}
+
+/* Style of the form itself */
 div.trivaa-offer-form {
 	position: fixed;
 	left: 0px;
-	top: 80px;
-	width: 1000px;
-	height: 600px;
+	width: $offer-form-width;
+	height: $offer-form-height;
 	border: 2px solid white;
 	border-left: none;
 	border-top-right-radius: 32px;
 	border-bottom-right-radius: 32px;
-	background-color: rgba(0, 0, 0, .4);
+	background-color: rgba(black, .6);
 	transition-property: left;
 	transition-duration: 400ms;
+	overflow: hidden;
+	padding: 16px;
 
 	z-index: 7500;
+
+	/* General style for a form section */
+	div.form-section {
+		margin-top: 4rem;
+
+		h5 {
+			margin-bottom: 1rem;
+		}
+	}
+
+	/* Anchor and button styles */
+	a, input {
+		display: block;
+		border: 2px solid white;
+		border-radius: 8px;
+		color: white;
+		padding: 4px 16px;
+		background-color: rgba(0,0,0,0);
+		margin: 4px;
+	}
+
+	a {
+		font-size: 14px;
+		cursor: pointer;
+
+		transition-property: background-color, color;
+		transition-duration: 400ms;
+
+		img {
+			width: 20px;
+			height: 20px;
+			margin-right: 4px;
+		}
+	}
+	
+	a.selected-anchor {
+		background-color: $trivaa-light-color;
+	}
+
+	/* Action buttons are wider */
+	a.action-button {
+		padding: 8px 40px;
+	}
+
+	/* Override for the 'Other...' software kind */
+	input#softwareKindOtherText {
+		visibility: hidden;
+		opacity: 0;
+		width: 25rem;
+		transition-property: opacity;
+		transition-duration: 400ms;
+	}
+
+	input#softwareKindOtherText.input-active {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	/* Override for the email input */
+	input#contactEmail {
+		width: 32rem;
+	}
+
+	/* Override for the submit button */
+	a#sendOfferRequest.action-button {
+		background-color: $bootstrap-successbutton-color;
+	}
+
+	a#sendOfferRequest.action-button:hover {
+		background-color: darken($bootstrap-successbutton-color, 8%);
+	}
+
+	/* Override for the close button */
+	a#closeForm.action-button {
+		background-color: $trivaa-special-highlight-color;
+
+		img {
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	a#closeForm.action-button:hover {
+		background-color: darken($trivaa-special-highlight-color, 8%);
+	}
 }
 
-div.trivaa-offer-form-hidden {
-	left: -1000px;
+@media (max-width: $bootstrap-md-breakpoint - 1) {
+	div.trivaa-offer-form {
+		top: 56px;
+	}
+}
+
+@media (min-width: $bootstrap-md-breakpoint) {
+	div.trivaa-offer-form {
+		top: 80px;
+	}
+}
+
+@media (max-width: $offer-form-width - 1), (max-height: $offer-form-height - 1) {
+	div.trivaa-offer-form {
+		border: none;
+		border-radius: 0%;
+		overflow: auto;
+		width: 100%;
+		height: 100%;
+
+		div.form-section {
+			margin-top: .5rem;
+	
+			h5 {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
+
+/* Helper style for the form when its hidden */
+div.form-hidden {
+	left: -100%;
+}
+
+/* Helper to prevent scrolling of certain content */
+@media (max-width: $bootstrap-md-breakpoint - 1) {
+	.noscroll {
+		overflow: hidden !important;
+	}
 }

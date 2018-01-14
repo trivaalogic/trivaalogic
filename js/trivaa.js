@@ -42,7 +42,6 @@ $(function () {
 
     // window and document actions here
     bindUIActions: function () {
-
       // Set isScrolling when the user scrolls or swipes.
       $(window).scroll(function () {
         if (JumpFix.isScrolling === false) {
@@ -167,10 +166,17 @@ $(function () {
     const navbarCollapse = navbar.find('div.navbar-collapse');
     const navbarToggler = $('button.navbar-toggler');
 
-    $(window).scroll(() => {
+    /**
+     * Actually dims the navbar depending on the scroll position.
+     */
+    function dimOnScroll() {
       if ($(window).scrollTop() > scrollThreshold) navbar.addClass('trivaa-dimmed-navbar');
       else if (!navbarToggler.is(':visible') || !navbarCollapse.is(':visible')) navbar.removeClass('trivaa-dimmed-navbar');
-    });
+    }
+
+    // Sets up the dimming function for the scroll event and on page load.
+    $(window).scroll(dimOnScroll);
+    dimOnScroll();
 
     navbarToggler.click(() => {
       let visible = navbarCollapse.is(':visible');
@@ -260,15 +266,65 @@ $(function () {
 /**
  * Ask for Offer form.
  */
-$(function() {
-  // Hide the navbar on the button click.
+$(function () {
+  const form = $('.trivaa-offer-form');
+  const overlay = $('.trivaa-offer-form-overlay');
+  const button = $('button.trivaa-ask-for-offer');
+
+  // Hide the navbar, enable the blur effect and show the form when clicking the button.
   const navbarToggler = $('button.navbar-toggler');
-  $('button.trivaa-ask-for-offer').click(() => {
-    if (navbarToggler.is(':visible')) navbarToggler.click();
+  button.click(() => {
+    // Hide the collapsible mobile navbar, if it's visible.
+    if (navbarToggler.is(':visible') && form.hasClass('form-hidden')) navbarToggler.click();
+
+    // Blur/unblur the main content.
+    $('div#mainContent').toggleClass('blur');
+
+    // Prevent the body from scrolling or reenable it.
+    $('body').toggleClass('noscroll');
+
+    // Show/hide the form and the overlay.
+    form.toggleClass('form-hidden');
+    overlay.toggleClass('overlay-active');
   });
 
-  $('.trivaa-ask-for-offer').click(() => {
-    const form = $('.trivaa-offer-form');
-    form.toggleClass('trivaa-offer-form-hidden');
+  // Clicking on the overlay hides the form.
+  overlay.click(() => {
+    if (!form.hasClass('form-hidden')) button.click();
+  });
+
+  // Swiping left also closes the form.
+  const hammerTime = new Hammer(form.get(0), {
+    recognizers: [
+      [Hammer.Swipe, {
+        direction: Hammer.DIRECTION_HORIZONTAL
+      }]
+    ]
+  });
+  hammerTime.on('swipe', function (e) {
+    if (e.direction == Hammer.DIRECTION_LEFT) button.click();
+  });
+
+  // Anchors in form sections mark their selection, except for action buttons.
+  form.find('div.form-section a').click(function (e) {
+    e.preventDefault();
+    const anchor = $(this);
+    if (!anchor.hasClass('action-button')) {
+      // See if the button is in a group. Unselect all others in the same group.
+      const group = anchor.data('button-group');
+      if (group && !anchor.hasClass('selected-anchor'))
+        form.find(`div.form-section a[data-button-group="${group}"]`).removeClass('selected-anchor');
+
+      // Toggle the class making the selection.
+      anchor.toggleClass('selected-anchor');
+    }
+  });
+
+  // The 'Other...' button makes the corresponding textbox visible.
+  form.find('a#softwareKindOther').click(() => form.find('input#softwareKindOtherText').toggleClass('input-active'));
+
+  // The close button also hides the form.
+  form.find('a#closeForm').click(() => {
+    if (!form.hasClass('form-hidden')) button.click();
   });
 });

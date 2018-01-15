@@ -14,6 +14,7 @@ exclude:
   - Gemfile.lock
   - README.md
   - design
+  - offerservice
 liquid:
   error_mode: strict
 

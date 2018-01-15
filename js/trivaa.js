@@ -360,6 +360,7 @@ $(function () {
     form.find('.form-spinner').addClass('additional-content-show');
 
     const offerRequest = {
+      language: $(`meta[name="page-language"]`).attr('content'),
       software: {
         mobile: form.find('a#softwareKindMobile').hasClass('selected-anchor'),
         web: form.find('a#softwareKindWeb').hasClass('selected-anchor'),
@@ -373,10 +374,11 @@ $(function () {
     // Send the request.
     requestRunning = true;
     const responseDelay = 400;
-    $.ajax('https://trivaacloud1.trivaalogic.com:8998/offerservice', {
+    $.ajax('http://localhost:8811/', { //'https://trivaacloud1.trivaalogic.com:8998/offerservice'
       method: 'POST',
-      data: offerRequest,
-      dataType: 'json'
+      data: JSON.stringify(offerRequest),
+      contentType: 'application/json; charset=utf-8',
+      dataType: 'text'
     }).done((msg) => {
       // Display the outcome.
       setTimeout(() => {

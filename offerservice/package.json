@@ -1,0 +1,17 @@
+{
+  "name": "offerservice",
+  "version": "1.0.0",
+  "description": "Service backing the 'Ask for Offer' form on trivaalogic.hu",
+  "main": "service.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "TrivaaLogic Ltd.",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "cors": "2.8.4",
+    "express": "4.16.2",
+    "nodemailer": "4.4.1"
+  }
+}

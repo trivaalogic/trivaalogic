@@ -1,0 +1,10 @@
+@addressText@
+
+@mainText1@
+
+@softwareKinds@
+
+@mainText2@
+
+@farewellText@,
+  TrivaaLogic

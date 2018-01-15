@@ -6,7 +6,7 @@
 // Required modules and top-level constants
 //
 
-// Internal modules
+// Built-in modules
 const mHttp = require('http');
 
 // External modules
@@ -15,9 +15,19 @@ const mBodyParser = require('body-parser');
 const mCors = require('cors');
 const mNodemailer = require('nodemailer');
 
+// Internal modules
+const mMailFormatter = require('./mail-formatter.js');
+
 // Constants
-const _supportedLanguages = ['hu', 'en'];
-const _requiredVars = ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'FROM_ADDRESS'];
+const __supportedLanguages = ['hu', 'en'];
+const __requiredVars = ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'FROM_ADDRESS', 'REQUEST_TO_ADDRESS'];
+const __corsOptions = {
+	origin: ['http://trivaalogic.hu', 'http://trivaalogic.com'],
+	optionsSuccessStatus: 200
+};
+const __fromAddress = process.env.FROM_ADDRESS;
+
+if (process.env.NODE_ENV !== 'production') __corsOptions.origin.push('http://0.0.0.0:4100');
 
 //
 // The service
@@ -25,7 +35,7 @@ const _requiredVars = ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'FROM
 
 // Validate the environment.
 let invalidEnv = false;
-_requiredVars.forEach((requiredVar) => {
+__requiredVars.forEach((requiredVar) => {
 	if (!process.env[requiredVar]) {
 		console.error(`The '${requiredVar}' environment variable needs to be set.`)
 		invalidEnv = true;
@@ -61,23 +71,26 @@ const transporter = mNodemailer.createTransport({
 // Start the server up and prepare it for JSON payloads.
 const app = mExpress();
 app.use(mBodyParser.json());
-app.use(mCors());
-app.use(function(err, req, res) {
-	console.error(`Unhandled error: ${err.message}`);
+app.use(mCors(__corsOptions));
+app.use(function (err, req, res, next) {
+	console.error(`${new Date()} Unhandled error: ${err.message}`);
 	res.status(500).send();
 });
 
 // Listen for the service endpoint on the root.
-const fromAddress = process.env.FROM_ADDRESS;
+let __offerRequestCounter = 0;
 app.options('/', mCors());
 app.post('/', mCors(), (req, res) => {
-	// Parse the body.
+	const offerRequestCounter = ++__offerRequestCounter;
+	console.log(`${new Date()} Received request #${offerRequestCounter} from ${req.ip}`);
+
+	// Parse the body and set the response type immediately.
 	const offerRequest = req.body;
 	res.set('Content-Type', 'text/plain');
 
 	// Validate the payload.
 	if (!offerRequest ||
-		_supportedLanguages.indexOf(offerRequest.language) < 0 ||
+		__supportedLanguages.indexOf(offerRequest.language) < 0 ||
 		typeof offerRequest.emailAddress !== 'string' ||
 		typeof offerRequest.reverseEngineering !== 'boolean' ||
 		typeof offerRequest.software !== 'object' ||
@@ -85,38 +98,61 @@ app.post('/', mCors(), (req, res) => {
 		typeof offerRequest.software.web !== 'boolean' ||
 		typeof offerRequest.software.database !== 'boolean' ||
 		(typeof offerRequest.software.other !== 'string' && typeof offerRequest.software.other !== 'boolean')) {
-		console.warn('Malformed request received.');
+		console.warn(`${new Date()} Malformed request received.`);
 		res.status(400).send();
 		return;
 	}
 
-	console.log(`Received request: ${req.body}`);
-
-	// Send the email.
+	// Send the offer request itself.
 	transporter.sendMail({
-		from: fromAddress,
-		to: offerRequest.emailAddress,
-		subject: 'Offer Request',
-		html: '<b>Hello world?</b>'
+		from: __fromAddress,
+		to: process.env.REQUEST_TO_ADDRESS,
+		subject: 'Ajánlatkérés',
+		html: mMailFormatter.createRequestEmailBody(offerRequest)
 	}, (error) => {
-		// Send the response.
 		if (!error) {
-			res.status(200).send('ok');
+			console.log(`${new Date()} Successfully sent offer request #${offerRequestCounter} email.`);
+
+			// Send the offer request confirmation email.
+			transporter.sendMail({
+				from: __fromAddress,
+				to: offerRequest.emailAddress,
+				subject: mMailFormatter.getSubject(offerRequest),
+				html: mMailFormatter.createConfirmationEmailBody(offerRequest, true),
+				text: mMailFormatter.createConfirmationEmailBody(offerRequest, false),
+				attachments: [{
+					filename: 'trivaalogic-logo.png',
+					path: mMailFormatter.companyLogoLocation,
+					cid: 'company-logo'
+				}]
+			}, (error) => {
+				// Send the response.
+				if (!error) {
+					console.log(`${new Date()} Successfully sent offer request confirmation #${offerRequestCounter} email.`);
+					res.status(200).send('ok');
+				} else {
+					console.error(`${new Date()} Error sending offer request confirmation #${offerRequestCounter}: ${error}`);
+					res.status(500).send('fail');
+				}
+			});
 		} else {
-			console.error(error);
+			// Send the error response.
+			console.error(`${new Date()} Error sending offer request #${offerRequestCounter}: ${error}`);
 			res.status(500).send('fail');
 		}
 	});
 });
 
 // Prepare the server.
+console.log(`${new Date()} Starting server in ${process.env.NODE_ENV || 'development'} mode.`);
+console.log(`${new Date()} Allowed CORS origins: ${__corsOptions.origin.join(', ')}`)
 const server = mHttp.createServer(app);
 server.on('error', (e) => {
 	if (e.code === 'EADDRINUSE') {
-		console.error(`Unable to start server on port ${port}. Stopping.`);
+		console.error(`${new Date()} Unable to start server on port ${port}. Stopping.`);
 		process.exit(2);
 	} else {
-		console.error(`Stopping due to unexpected error occured when starting server: ${e.message}`);
+		console.error(`${new Date()} Stopping due to unexpected error occured when starting server: ${e.message}`);
 		process.exit(255);
 	}
 });
@@ -125,7 +161,7 @@ server.on('error', (e) => {
 try {
 	app.listen(port);
 } catch (e) {
-	console.error(`Error occured when attempting to listen on port ${port}: ${e.message}`);
+	console.error(`${new Date()} Error occured when attempting to listen on port ${port}: ${e.message}`);
 	process.exit(255);
 }
-console.log(`Listening on port ${port}.`);
+console.log(`${new Date()} Listening on port ${port}.`);

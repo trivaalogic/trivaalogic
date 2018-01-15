@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>Ajánlatkérés</title>
+	<meta charset="UTF-8"/>
+</head>
+<body>
+	<h3>Ajánlatkérés</h3>
+	<ul>
+		<li>Beérkezés ideje: @dateReceived@</li>
+		<li>Email cím: @emailAddress@</li>
+		<li>Szoftver kiválasztás:
+			<ul>
+				<li>Mobil app: <input type="checkbox" disabled @mobile@/></li>
+				<li>Web app: <input type="checkbox" disabled @web@/></li>
+				<li>Adatbázis: <input type="checkbox" disabled @database@/></li>
+				<li>Egyéb: @other@</li>
+			</ul>
+		</li>
+		<li>Reverse engineering: <input type="checkbox" disabled @reverseEngineering@/></li>
+	</ul>
+</body>
+</html>

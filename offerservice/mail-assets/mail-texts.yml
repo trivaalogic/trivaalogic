@@ -1,0 +1,30 @@
+en:
+  subject: Offer Request Confirmation
+  addressText: Dear Customer,
+  mainText1: >
+    Thank you for approaching us with your inquiry. We have received your offer request and we will
+    get back to you soon to discuss the next steps. You expressed your interest in the below kinds
+    of software
+  mobile: Mobile application
+  web: Web application
+  database: Database software
+  other: Other
+  mainText2: >
+    We will contact you via this email address and organize a meeting. Looking forward to working together
+    to build the software solution you need!
+  farewellText: Sincerely
+hu:
+  subject: Offer Request Confirmation
+  addressText: Dear Customer,
+  mainText1: >
+    Thank you for approaching us with your inquiry. We have received your Offer Request and we will
+    get back to you soon to discuss the next steps. You expressed your interest in the below kinds
+    of software
+  mobile: Mobile application
+  web: Web application
+  database: Database software
+  other: Other
+  mainText2: >
+    We will contact you via this email address and organize a meeting. Looking forward to working together
+    to build the software solution you need!
+  farewellText: Sincerely

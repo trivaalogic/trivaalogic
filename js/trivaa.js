@@ -374,7 +374,7 @@ $(function () {
     // Send the request.
     requestRunning = true;
     const responseDelay = 400;
-    $.ajax('http://localhost:8811/', { //'https://trivaacloud1.trivaalogic.com:8998/offerservice'
+    $.ajax('https://trivaacloud1.trivaalogic.hu/offerservice', {
       method: 'POST',
       data: JSON.stringify(offerRequest),
       contentType: 'application/json; charset=utf-8',

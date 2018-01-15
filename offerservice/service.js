@@ -80,6 +80,9 @@ app.use(function (err, req, res, next) {
 // Listen for the service endpoint on the root.
 let __offerRequestCounter = 0;
 app.options('/', mCors());
+app.get('/', (req, res) => {
+	res.status(200).send('ok');
+});
 app.post('/', mCors(), (req, res) => {
 	const offerRequestCounter = ++__offerRequestCounter;
 	console.log(`${new Date()} Received request #${offerRequestCounter} from ${req.ip}`);

@@ -1,119 +1,109 @@
 language: hu
-title: Custom software for web, mobile & cloud
+title: Egyedi szoftverek web-re, mobilra és a felhőbe
 
 # Menu
-item_areas: Areas
-item_process: How we work
-item_about: About
-item_contact: Contact
+item_areas: Szakterületeink
+item_process: Munkafolyamat
+item_about: Rólunk
+item_contact: Kapcsolat
 
 # Intro
-intro: Custom software for small and large businesses and individuals
+intro: Egyedi szoftverek kis- és nagyvállalkozásoknak, magánszemélyeknek
 
 # Areas
-areas_summary: We design and develop software in the following areas
-mobile_apps: Mobile applications
+areas_summary: Az alábbi területeken fejlesztünk szoftvereket
+mobile_apps: Mobil alkalmazások
 mobile_apps_desc: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-web_apps: Web applications
+  Egyedi igényeket kielégítő mobilos alkalmazásokat készítünk Android és iOS platformokra. Ez magában foglalja a szükséges
+  szerveroldali (ú.n. backend) komponensek elkészítését is, beleértve már meglévő rendszerekkel való integrációt. A
+  grafikus felület tervezetét és az alkalmazás interakciós modelljét is elkészítjük - amennyiben szükséges - az adott
+  mobilplatform irányelveinek megfelelően.
+web_apps: Web alkalmazások
 web_apps_desc: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-db_dev: Database development
+  Web alkalmazásokat készítünk a legújabb szabványokkal és legmodernebb web-es keretrendszerekkel. Minden web-es megoldásunkat
+  mobil eszközökön való megjelenésre is optimalizáljuk. Szükség esetén a megfelelő szerveroldali háttérszolgáltatásokat is
+  lefejlesztjük, így tehát ú.n. "full stack" fejlesztést végzünk.
+db_dev: Adatbázis fejlesztés
 db_dev_desc: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-cloud: Cloud and microservices
+  Tisztán adatbázis-orientált szoftvereket is készítünk számos adatbázis rendszerre, beleértve a klasszikus relációs illetve
+  a feladatorientált NoSQL megoldásokat it (Oracle, PostgreSQL, MySQL/MariaDB, mongoDB, ...). Ez magában foglalja adattransformációs
+  feladatok fejlesztését, Extract-Transfer-Load (ETL) folyamatok készítését, adattárház építést és analitikát.
+cloud: Felhő és mikroszolgáltatások
 cloud_desc: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-reveng: Reverse engineering
+  Szoftvereinket igény szerint felhőbe telepíthető mikroszolgáltatás formájában is elkészítjük. Minden szerveroldali termékünket
+  (Docker alapú) container-be szervezett formában szállítjuk, melyet könnyú feltelepíteni a legtöbb felhő-alapú infrastruktúrára
+  (AWS, Google App Engine, ...) illetve saját üzemeltetésű (ú.n. on-premise) szerverekre.
+reveng: Visszafejtés (reverse engineering)
 reveng_desc: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-support: Support and consulting
+  Segíteni tudunk, ha már meglévő rendszerét szeretné módosítani vagy adott esetben kiváltani. Régi, nehezen karbantartható
+  rendszerek esetén gyakran merül fel az igény azok részleges vagy teljes visszafejtésére. Ezeket tüzetes vizsgálatnak vetjük alá
+  mielőtt bármilyen kért változtatást végeznénk rajtuk.
+support: Támogatás és tanácsadás
 support_desc: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  Minden általunk fejlesztett szoftver kiegészíthető támogatási megállapodással. Szerveroldali termékeink üzemeltetését
+  el tudjuk látni Software-as-a-Service (SaaS) formában is, igény esetén. Kérheti szakmai véleményünket, mielőtt már használt
+  vagy használni kívánt szoftverekkel kapcsolatosan döntést hozna. Mi az Ön igényeinek és rendszereinek ismeretében a legjobb
+  tanácsokkal igyekszünk szolgálni.
 
 # Process
-process_summary: This is how working with us looks like
+process_summary: Így zajlik velünk a munka
 process_step1: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  Lépjen kapcsolatba velünk email-en vagy a fenti ajánlatkérő űrlap segítségével. Mihamarabb egyeztetünk Önnel egy találkozót,
+  hogy megismerhessük az Ön igényeit, s nekikezdhessünk az érdemi munkának.
 process_step2: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  Közösen kidolgozzuk a projekt részleteit és annak ütemezését: milyen szoftverre van szüksége, milyen formában kell szállítani,
+  stb.. E szakaszban nekiállunk a szükséges vázlatok elkészítésének.
 process_step3: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  A szoftvert iteratívan, ciklusokra bontva fejlesztjük agilist módszertanok használatával. Rendszeres időközönként újabb és újabb
+  változatait szállítjuk a szoftvernek, így Ön pontosan követni tudja a fejlesztés előrehaladtát, kipróbálhatja annak múködését és
+  pontosíthatja a követelményeket. A dokumentáció elkészítése és a tesztelés ebben a fázisban folyamatosan zajlik.
 process_step4: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  Rendszeresen megvizsgáljuk az előre megbeszélt teljesítési kritériumokat, ezáltal biztosítva azt, hogy a szoftver megfelelően
+  igazodik az Ön igényeihez és kíváló minőséget képvisel.
 process_step5: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  Amikor az első produktívan is használható változat elkészül feltelepítjük azt az Ön által választott infrastruktúrára vagy
+  feltöltjük egy alkalmazásboltba (mobil alkalmazások esetén). Ezen a ponton ér véget a fejlesztési fázis és kezdődik meg az
+  üzemeltetés a megkötött megállapodás szellemében.
 
 # About
 about:
-  - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  - A TrivaaLogic 2012-ben alakult a versenyszférában edződött szoftverfejlesztő mérnökökből. Számos kis- és nagyvállalati projekten dolgoztunk
+    karrierünk során, s egyik sem múlt el értékes tapasztalatok nélkül. Ez a rutin átível az üzleti szoftverfejlesztés teljes
+    vertikumán, kezdve az adatbázis rétegtől a web-es szolgáltatásokon át egészen a kliensoldali megoldásokig, legyen az web-,
+    asztali- vagy mobil-alapú.
+  - Legfőbb szakterületünk komplex, egyedi szoftverek fejlesztése az első kézfogástól kezdve egészen a megálmodott rendszer átadásáig.
+    Ez idő alatt kiemelten fontos, hogy a leghatékonyabb kommunikáció épüljön ki a Megrendelővel. Ez teszi lehetővé, hogy mindig megértsük
+    egymást, s hogy a végeredmény a legnagyobb megelégedésére szolgáljon.
+  - Nem csak a nagy vállalatok kiváltsága az egyedi igényekhez igazodó szoftver. Ön is építtethet magának olyan testreszabott megoldásokat,
+    melyek a legjobban illeszkednek az Ön üzleti igényeihez. Lépjen kapcsolatba velünk, ha egyik polcról leemelhető szoftver sem nyerte el
+    tetszését és szeretne belevágni sajátja elkészítésébe, ami igazán az Öné...
       
 # Contact
-company_name: TrivaaLogic Ltd.
-company_postal_address: H-2000 Puskin St. 50, Szentendre, Hungary
+company_name: TrivaaLogic Informatikai Kft.
+company_postal_address: 2000 Szentendre, Puskin u. 50.
 
 # Footer
-created_by: Site created by TrivaaLogic Ltd.
+created_by: Az oldalt készítette a TrivaaLogic Informatikai Kft.
 
 # Ask for Offer
-ask_for_offer: Ask for Offer
+ask_for_offer: Ajánlatkérés
 
-question_kind: What kind of software do you need?
-software_kind_mobile: Mobile application
-software_kind_web: Web application
-software_kind_database: Database software
-software_kind_other: Other
-software_kind_other_hint: ex. desktop, embedded, etc.
+question_kind: Milyen szoftverre van szüksége?
+software_kind_mobile: Mobil alkalmazás
+software_kind_web: Web alkalmazás
+software_kind_database: Adatbázis szoftver
+software_kind_other: Egyéb
+software_kind_other_hint: pl. asztali, beágyazott, stb.
 
-question_existing: Are there any existing software to build upon?
-existing_none: No, new software is needed
-existing_reveng: Yes, I have software to rewrite/modify
+question_existing: Van meglévő szoftver, amire építeni kíván?
+existing_none: Nem, új szoftverre van szükség
+existing_reveng: Igen, meglévő rendszert kell módosítani
 
-contact_method: How can we contact you?
-contact_email: Please enter your email address
+contact_method: Hogyan léphetünk kapcsolatba Önnel?
+contact_email: Kérem adja meg az email címét
 
-offer_send: Submit
-offer_close: Close
+offer_send: Küldés
+offer_close: Bezárás
 
-submit_success: The offer request has been sent successfully. We'll contact you soon to discuss the next steps. Thank you for approaching us!
-submit_fail: Unfortunately we could not send the offer. This is a problem on our side. Apologies! You can still get in contact with us via email
+submit_success: Az ajánlatkérést sikeresen elküldtük. Nemsokára kapcsolatba lépünk Önnel, hogy megbeszéljük a következő lépéseket. Köszönjük megkeresését!
+submit_fail: Sajnos nem sikerült elküldeni az ajánlatkérést ezen a módon. Ez a probléma a mi oldalunkon van. Elnézését kérjük! Email-ben fel tudja venni velünk a kapcsolatot

@@ -14,17 +14,16 @@ en:
     to build the software solution you need!
   farewellText: Sincerely
 hu:
-  subject: Offer Request Confirmation
-  addressText: Dear Customer,
+  subject: Ajánlatkérés visszaigazolás
+  addressText: Kedves Érdeklődő,
   mainText1: >
-    Thank you for approaching us with your inquiry. We have received your Offer Request and we will
-    get back to you soon to discuss the next steps. You expressed your interest in the below kinds
-    of software
-  mobile: Mobile application
-  web: Web application
-  database: Database software
-  other: Other
+    Köszönjük, hogy megkeresett minket egyedi szoftverigényével! Az ajánlatkérését megkaptuk
+    és nemsokára felvesszük Önnel a kapcsolatot a következő lépéseket illetően. Az alábbi szoftvertípusokat jelölte meg
+  mobile: Mobil alkalmazás
+  web: Web alkalmazás
+  database: Adatbázis szoftver
+  other: Egyéb
   mainText2: >
-    We will contact you via this email address and organize a meeting. Looking forward to working together
-    to build the software solution you need!
-  farewellText: Sincerely
+    Ezen az email címen fogjuk Önt keresni, hogy megbeszéljünk egy találkozót. Már várjuk, hogy megkezdhessük
+    Önnel a közös munkát!
+  farewellText: Tisztelettel

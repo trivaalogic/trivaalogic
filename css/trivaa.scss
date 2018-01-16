@@ -29,11 +29,11 @@ $bootstrap-md-breakpoint: 768px;
 
 $process-desktop-breakpoint: 1600px;
 $process-mobile-landscape-breakpoint: 740px;
+$process-mobile-max-width: $process-mobile-landscape-breakpoint + 60px;
 
 /* Animation times */
 $trivaa-anim-duration: 400ms;
 $trivaa-form-appearance-duration: 600ms;
-
 
 /* Individual sizes */
 $process-step-mobile-portrait-size: 80px;
@@ -341,6 +341,7 @@ img.trivaa-facebook-icon {
 	opacity: 0;
 	transition-property: left, top, opacity;
 	transition-duration: 800ms;
+	padding-top: 8px;
 }
 
 /* Style of the digit */
@@ -669,6 +670,9 @@ hr.trivaa-process-separator-mobile {
 /* Container */
 .trivaa-process-mobile {
 	width: 100%;
+	max-width: $process-mobile-max-width;
+	margin-left: auto;
+	margin-right: auto;
 	height: 1240px;
 }
 
@@ -755,7 +759,7 @@ hr.trivaa-process-separator-mobile {
 		.trivaa-process-step + div + div {
 			left: $process-step-mobile-portrait-size + 20;
 			width: calc(100% - #{$process-step-mobile-portrait-size + 50});
-			padding-top: 0px;
+			padding-top: 8px;
 			padding-right: 0px;
 		}
 	}
@@ -967,7 +971,7 @@ hr.trivaa-process-separator-mobile {
 
 
 /*********************************************************************************************
- * Contact
+ * Footer
  *********************************************************************************************/
 
  footer {

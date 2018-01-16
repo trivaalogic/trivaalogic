@@ -30,7 +30,7 @@ db_dev_desc: >
 cloud: Cloud and microservices
 cloud_desc: >
   We develop software to run on the cloud in the form of microservices, if need be. Any server-side software we build is
-  shipped in a containerized form (via Docker) which enables installation to most cloud infrastructure (AWS, Google App Engine, ...)
+  shipped in a containerized form (via Docker) which enables installation to most cloud infrastructure (AWS, Google Cloud, ...)
   as well as on-premise systems.
 reveng: Reverse engineering
 reveng_desc: >
@@ -46,41 +46,34 @@ support_desc: >
 # Process
 process_summary: This is how working with us looks like
 process_step1: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  Contact us via mail or conveniently using the offer request form and we'll get back to you soon to organize a meeting.
+  There we can start becoming familiar with your story and the software you have in mind.
 process_step2: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  Together we discuss the details and scheduling of the project, what kind of software you need, how would you like it to be
+  delivered, etc.. We also start creating a draft and discuss the next steps.
 process_step3: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  The software is developed iteratively using an agile methodology. We regularly ship new increments so you can see how
+  development progresses and adjust it constantly to your exact needs. Documentation and testing is done repeatedly in this
+  phase.
 process_step4: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  We regularly check the done criteria we established at the beginning and make sure the software meets the requirements
+  and the quality expectations.
 process_step5: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  When the first production-grade version of the software is ready, we install it to the infrastructure of your choice or place it
+  in an application store in case of mobile apps. This is where the development phase finishes and the operation phase begins according
+  to the support agreements made.
 
 # About
 about:
-  - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  - TrivaaLogic has been founded in 2012 by seasoned software engineers who have worked on several projects throughout their professional
+    careers. We managed to gather a lot of experience all the way along the technology stack, from database and persistence
+    through web service solutions until client-side technologies, be it web-, desktop- or mobile-oriented.
+  - Our speciality is carrying out complex software development projects from the very first handshake until the required system stands
+    ready to serve your needs. Establishing and maintaining proper communication during this time is of vital importance. This ensures
+    that we always understand each other so you can be satisfied with the results in the end.
+  - Custom software is not just for big companies. You can also have your tailor-made solutions that best serves your business. Contact us
+    if no off-the-shelf software managed to fulfill your needs and we'll guide you through the often mysterious ways of the software
+    engineering industry...
       
 # Contact
 company_name: TrivaaLogic Ltd.

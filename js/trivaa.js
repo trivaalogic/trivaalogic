@@ -302,6 +302,12 @@ $(function () {
     overlay.toggleClass('overlay-active');
   });
 
+  // All 'Ask for Offer' links activate the button.
+  $('a.trivaa-ask-for-offer').click((e) => {
+    e.preventDefault();
+    button.click();
+  });
+
   // Clicking on the overlay hides the form.
   overlay.click(() => {
     if (!form.hasClass('form-hidden')) button.click();

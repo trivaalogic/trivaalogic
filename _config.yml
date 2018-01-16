@@ -20,7 +20,7 @@ liquid:
 
 # i18n
 languages: ["hu", "en"]
-default_lang: "en"
+default_lang: "hu"
 exclude_from_localization: ["js", "img", "css"]
 parallel_localization: true
 

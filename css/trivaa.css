@@ -1,0 +1,858 @@
+/*********************************************************************************************
+ * Layout variables and mixins
+ *********************************************************************************************/
+/* Colors */
+/* Font sizing */
+/* Breakpoints for the responsive layout */
+/* Animation times */
+/* Individual sizes */
+/*********************************************************************************************
+ * General styles
+ *********************************************************************************************/
+body {
+  background-color: #004964;
+  color: white;
+  font-family: 'Oxygen', sans-serif; }
+
+div#bgImage {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 1100px;
+  background-image: url(../img/background-large.png);
+  background-position-x: right;
+  background-position-y: top;
+  background-repeat: no-repeat; }
+
+@media (max-width: 1280px) {
+  div#bgImage {
+    background-image: url(../img/background-small.png);
+    height: 688px; } }
+a {
+  text-decoration: none !important;
+  color: #004964; }
+
+a:hover {
+  color: #7aa2b2; }
+
+hr {
+  border-top: 2px solid rgba(0, 0, 0, 0.1) !important; }
+
+img {
+  -moz-user-select: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important; }
+
+button:active, button:focus, a, a:hover, a:active {
+  outline: none !important;
+  -moz-user-select: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important; }
+
+input, input:active {
+  outline: none !important; }
+
+/*********************************************************************************************
+ * Menu
+ *********************************************************************************************/
+/* Navbar styles */
+nav.navbar {
+  padding: 0px;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  z-index: 10000; }
+
+nav.navbar.trivaa-dimmed-navbar {
+  background-color: rgba(0, 73, 100, 0.75);
+  transition-property: background-color;
+  transition-duration: 250ms; }
+
+/* Item styles */
+.nav-item a.nav-link {
+  color: white !important;
+  text-transform: uppercase !important;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0px;
+  white-space: nowrap;
+  padding: .5rem .75rem !important;
+  transition-property: background-color, color;
+  transition-duration: 250ms; }
+
+@media (max-width: 767px) {
+  .nav-item {
+    width: 100% !important; }
+
+  .nav-item a.nav-link {
+    padding-left: 1rem; } }
+a.nav-link.trivaa-menu-item:hover {
+  background-color: #fada23;
+  color: black !important;
+  transition-property: background-color, color;
+  transition-duration: 250ms; }
+
+/* Company brand */
+.navbar-brand {
+  padding: .0rem 0rem .0rem .5rem; }
+
+/* Mobile toggler button */
+button.navbar-toggler {
+  transition-property: background-color;
+  transition-duration: 250ms;
+  background-color: rgba(122, 162, 178, 0.4);
+  outline: none !important; }
+
+button.navbar-toggler:focus:not(.collapsed) {
+  background-color: #fada23;
+  border: none;
+  outline: none !important;
+  transition-property: background-color;
+  transition-duration: 250ms; }
+
+/** Flags on dektop and mobile */
+.trivaa-flag-desktop {
+  width: 24px;
+  height: 24px; }
+
+.trivaa-flag-mobile {
+  width: 50px;
+  height: 50px; }
+
+/* Facebook icon */
+img.trivaa-facebook-icon {
+  width: 32px;
+  height: 32px; }
+
+@media (min-width: 768px) {
+  img.trivaa-facebook-icon {
+    width: 24px;
+    height: 24px; } }
+/*********************************************************************************************
+ * Intro
+ *********************************************************************************************/
+.trivaa-intro {
+  margin-top: 360px;
+  padding: 0px 16px; }
+
+@media (max-width: 740px) {
+  .trivaa-intro {
+    margin-top: 192px; } }
+.trivaa-intro > div {
+  max-width: 872px;
+  animation-name: intro-slidein;
+  animation-fill-mode: forwards;
+  animation-duration: 1.2s;
+  animation-delay: 1s;
+  opacity: 0; }
+
+@media (min-width: 872px) {
+  .trivaa-intro > div {
+    margin: auto; } }
+.trivaa-intro img {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 16px; }
+
+.trivaa-intro h3 {
+  margin-top: 1rem; }
+
+@keyframes intro-slidein {
+  to {
+    opacity: 1; } }
+@media (min-width: 1288px) {
+  @keyframes intro-slidein {
+    from {
+      margin-left: 180px; }
+    to {
+      opacity: 1;
+      margin-left: 200px; } } }
+/*********************************************************************************************
+ * Areas
+ *********************************************************************************************/
+.trivaa-areas {
+  margin-top: 384px; }
+
+@media (max-width: 1750px) {
+  .trivaa-areas {
+    margin-top: 600px; } }
+@media (max-width: 1280px) {
+  .trivaa-areas {
+    margin-top: 260px; } }
+.trivaa-area-icon {
+  width: 64px;
+  margin-bottom: 1rem; }
+
+.trivaa-areas h4 {
+  margin-bottom: 4rem; }
+
+/*********************************************************************************************
+ * Process (common)
+ *********************************************************************************************/
+/* Inner container */
+.trivaa-process-container {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%; }
+
+/* Area style */
+.trivaa-process-step {
+  position: absolute;
+  z-index: 5000;
+  cursor: pointer; }
+
+/* Circle style */
+.trivaa-process-step + div {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  margin: 8px;
+  border-radius: 50%;
+  border-color: white;
+  border-width: 10px;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-property: background-color, color;
+  transition-duration: 800ms;
+  overflow: hidden;
+  z-index: 200; }
+
+/* Text style */
+.trivaa-process-step + div + div {
+  position: absolute;
+  font-size: 14px;
+  opacity: 0;
+  transition-property: left, top, opacity;
+  transition-duration: 800ms;
+  padding-top: 8px; }
+
+/* Style of the digit */
+.trivaa-process-step + div > span {
+  position: relative;
+  left: 0px;
+  font-size: 60px;
+  transition-property: left;
+  transition-duration: 400ms;
+  z-index: 100; }
+
+/* Style of the icon when off-screen */
+.trivaa-process-step:not([data-step="3"]) + div > img {
+  position: absolute;
+  left: -222px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  transition-property: left;
+  transition-duration: 400ms;
+  z-index: 100; }
+
+/* All steps except #3 change colour when active */
+.trivaa-process-step:not([data-step="3"]).active + div {
+  background-color: #fada23;
+  color: black; }
+
+/* All step icons (except #3) slide in from the left and have the same animation properties */
+.trivaa-process-step:not([data-step="3"]).active + div > img {
+  left: 0px;
+  animation-delay: 400ms;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards; }
+
+/* All step digits (except #3) slide out to the right when active */
+.trivaa-process-step:not([data-step="3"]).active + div > span {
+  left: 120px; }
+
+/* All step texts fade in when active */
+.trivaa-process-step.active + div + div {
+  opacity: 1; }
+
+/* Step #1 */
+.trivaa-process-step[data-step="1"].active + div > img {
+  animation-name: process-mail-spin; }
+
+@keyframes process-mail-spin {
+  to {
+    transform: rotate(360deg); } }
+/* Step #2 */
+.trivaa-process-step[data-step="2"].active + div > img {
+  animation-name: process-bubble-pulsate; }
+
+@keyframes process-bubble-pulsate {
+  25% {
+    transform: scale(1.2); }
+  50% {
+    transform: scale(1); }
+  75% {
+    transform: scale(1.2); }
+  100% {
+    transform: scale(1); } }
+/* Step #3 */
+.trivaa-process-step[data-step="3"] + div {
+  width: 136px;
+  height: 136px;
+  border: none; }
+
+.trivaa-process-step[data-step="3"].active + div {
+  background-color: #fa6723; }
+
+.trivaa-process-step[data-step="3"] + div > img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 136px;
+  height: 136px;
+  transition-property: transform;
+  transition-duration: 800ms; }
+
+.trivaa-process-step[data-step="3"].active + div > img {
+  transform: rotate(270deg); }
+
+/* Step #4 */
+.trivaa-process-step[data-step="4"].active + div > img {
+  animation-name: process-notebook-wiggle; }
+
+@keyframes process-notebook-wiggle {
+  25% {
+    transform: rotate(10deg); }
+  50% {
+    transform: rotate(-8deg); }
+  75% {
+    transform: rotate(6deg); }
+  100% {
+    transform: rotate(0deg); } }
+/* Step #4 */
+.trivaa-process-step[data-step="5"].active + div > img {
+  animation-name: process-arrow-jump; }
+
+@keyframes process-arrow-jump {
+  25% {
+    transform: translateY(-6px); }
+  50% {
+    transform: none; }
+  75% {
+    transform: translateY(-6px); }
+  100% {
+    transform: none; } }
+/*********************************************************************************************
+ * Process (desktop)
+ *********************************************************************************************/
+/**
+ * Frame
+ */
+/* Separator */
+hr.trivaa-process-separator-desktop {
+  margin: 6rem 2rem; }
+
+/* Container */
+.trivaa-process-desktop {
+  width: 1600px;
+  height: 450px;
+  margin-left: auto;
+  margin-right: auto; }
+
+@media (max-width: 1599px) {
+  .trivaa-process-desktop {
+    display: none; }
+
+  .trivaa-process-desktop-header {
+    display: none; }
+
+  hr.trivaa-process-separator-desktop {
+    display: none; } }
+/* Summary text */
+.trivaa-process-desktop-header h4 {
+  margin-bottom: 4rem; }
+
+/* Inner container */
+.trivaa-process-desktop {
+  /* Step #1 */
+  /* Step #2 */
+  /* Step #3 */
+  /* Step #4 */
+  /* Step #5 */ }
+  .trivaa-process-desktop .trivaa-process-container {
+    background-image: url(../img/process/process-large-bg.png); }
+  .trivaa-process-desktop .trivaa-process-step[data-step="1"] {
+    left: 0px;
+    top: 0px;
+    width: 650px;
+    height: 225px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="1"] + div {
+    left: 0px;
+    top: 0px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="1"] + div + div {
+    left: 180px;
+    top: 0px;
+    max-width: 500px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="1"].active + div + div {
+    left: 200px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="2"] {
+    left: 0px;
+    top: 226px;
+    width: 500px;
+    height: 225px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="2"] + div {
+    left: 366px;
+    top: 314px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="2"] + div + div {
+    left: 20px;
+    top: 314px;
+    max-width: 350px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="2"].active + div + div {
+    left: 0px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="3"] {
+    left: 651px;
+    top: 0px;
+    width: 300px;
+    height: 450px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="3"] + div {
+    left: 724px;
+    top: 0px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="3"] + div + div {
+    left: 640px;
+    top: 246px;
+    max-width: 330px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="3"].active + div + div {
+    top: 226; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="4"] {
+    left: 1090px;
+    top: 226px;
+    width: 510px;
+    height: 225px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="4"] + div {
+    left: 1098px;
+    top: 314px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="4"] + div + div {
+    left: 1260px;
+    top: 314px;
+    width: 350px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="4"].active + div + div {
+    left: 1280px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="5"] {
+    left: 951px;
+    top: 0px;
+    width: 650px;
+    height: 225px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="5"] + div {
+    left: 1464px;
+    top: 0px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="5"] + div + div {
+    left: 970px;
+    top: 0px;
+    max-width: 500px; }
+  .trivaa-process-desktop .trivaa-process-step[data-step="5"].active + div + div {
+    left: 950px; }
+
+/*********************************************************************************************
+ * Process (mobile)
+ *********************************************************************************************/
+/**
+* Frame
+*/
+/* Separator */
+hr.trivaa-process-separator-mobile {
+  margin: 3rem 1rem; }
+
+/* Container */
+.trivaa-process-mobile {
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 1240px; }
+
+@media (max-width: 740px) {
+  .trivaa-process-mobile {
+    height: 800px; } }
+@media (min-width: 1600px) {
+  .trivaa-process-mobile {
+    display: none; }
+
+  .trivaa-process-mobile-header {
+    display: none; }
+
+  hr.trivaa-process-separator-mobile {
+    display: none; } }
+/* Summary text */
+.trivaa-process-mobile-header h4 {
+  margin-bottom: 4rem; }
+
+.trivaa-process-mobile {
+  /* Inner container */
+  /* Step sizes are all the same on the mobile */
+  /* Circles have the same size on mobile portrait */
+  /* Texts are always at the same horizontal location with the same dimensions */
+  /* Step #1 */
+  /* Step #2 */
+  /* Step #3 */
+  /* Step #4 */
+  /* Step #5 */ }
+  .trivaa-process-mobile .trivaa-process-container {
+    background-image: url(../img/process/process-small-bg.png);
+    background-position: left top;
+    background-repeat: no-repeat; }
+  @media (max-width: 740px) {
+    .trivaa-process-mobile .trivaa-process-container {
+      background-image: none; } }
+  .trivaa-process-mobile .trivaa-process-step {
+    left: 0px;
+    width: 100%;
+    height: 276px; }
+  @media (max-width: 740px) {
+    .trivaa-process-mobile .trivaa-process-step {
+      height: 160px; } }
+  @media (max-width: 740px) {
+    .trivaa-process-mobile .trivaa-process-step + div {
+      left: 0px;
+      width: 80px;
+      height: 80px;
+      border-width: 5px; }
+    .trivaa-process-mobile .trivaa-process-step + div > img {
+      width: 40px;
+      height: 40px; }
+    .trivaa-process-mobile .trivaa-process-step + div > span {
+      font-size: 40px; } }
+  .trivaa-process-mobile .trivaa-process-step + div + div {
+    left: 220px;
+    width: calc(100% - 240px);
+    padding-top: 16px;
+    padding-right: 16px; }
+  @media (max-width: 740px) {
+    .trivaa-process-mobile .trivaa-process-step + div + div {
+      left: 100px;
+      width: calc(100% - 130px);
+      padding-top: 8px;
+      padding-right: 0px; } }
+  @media (min-width: 741px) {
+    .trivaa-process-mobile .trivaa-process-step.active + div + div {
+      left: 240px; } }
+  @media (max-width: 740px) {
+    .trivaa-process-mobile .trivaa-process-step.active + div + div {
+      left: 110px; } }
+  .trivaa-process-mobile .trivaa-process-step[data-step="1"] {
+    top: 0px; }
+  @media (min-width: 741px) {
+    .trivaa-process-mobile .trivaa-process-step[data-step="1"] + div {
+      left: 74px;
+      top: 0px; } }
+  .trivaa-process-mobile .trivaa-process-step[data-step="2"] {
+    top: 160px; }
+  @media (min-width: 741px) {
+    .trivaa-process-mobile .trivaa-process-step[data-step="2"] {
+      top: 276px; } }
+  .trivaa-process-mobile .trivaa-process-step[data-step="2"] + div {
+    top: 160px; }
+  @media (min-width: 741px) {
+    .trivaa-process-mobile .trivaa-process-step[data-step="2"] + div {
+      left: 0px;
+      top: 276px; } }
+  .trivaa-process-mobile .trivaa-process-step[data-step="2"] + div + div {
+    top: 160px; }
+  @media (min-width: 741px) {
+    .trivaa-process-mobile .trivaa-process-step[data-step="2"] + div + div {
+      top: 276px; } }
+  .trivaa-process-mobile .trivaa-process-step[data-step="3"] {
+    top: 320px; }
+  @media (min-width: 741px) {
+    .trivaa-process-mobile .trivaa-process-step[data-step="3"] {
+      top: 552px; } }
+  .trivaa-process-mobile .trivaa-process-step[data-step="3"] + div {
+    top: 320px; }
+  @media (min-width: 741px) {
+    .trivaa-process-mobile .trivaa-process-step[data-step="3"] + div {
+      left: 74px;
+      top: 544px; } }
+  @media (max-width: 740px) {
+    .trivaa-process-mobile .trivaa-process-step[data-step="3"] + div > img {
+      width: 80px;
+      height: 80px; } }
+  .trivaa-process-mobile .trivaa-process-step[data-step="3"] + div + div {
+    top: 320px; }
+  @media (min-width: 741px) {
+    .trivaa-process-mobile .trivaa-process-step[data-step="3"] + div + div {
+      top: 552px; } }
+  .trivaa-process-mobile .trivaa-process-step[data-step="4"] {
+    top: 480px; }
+  @media (min-width: 741px) {
+    .trivaa-process-mobile .trivaa-process-step[data-step="4"] {
+      top: 828px; } }
+  .trivaa-process-mobile .trivaa-process-step[data-step="4"] + div {
+    top: 480px; }
+  @media (min-width: 741px) {
+    .trivaa-process-mobile .trivaa-process-step[data-step="4"] + div {
+      left: 0px;
+      top: 828px; } }
+  .trivaa-process-mobile .trivaa-process-step[data-step="4"] + div + div {
+    top: 480px; }
+  @media (min-width: 741px) {
+    .trivaa-process-mobile .trivaa-process-step[data-step="4"] + div + div {
+      top: 828px; } }
+  .trivaa-process-mobile .trivaa-process-step[data-step="5"] {
+    top: 640px; }
+  @media (min-width: 741px) {
+    .trivaa-process-mobile .trivaa-process-step[data-step="5"] {
+      top: 1104px; } }
+  .trivaa-process-mobile .trivaa-process-step[data-step="5"] + div {
+    top: 640px; }
+  @media (min-width: 741px) {
+    .trivaa-process-mobile .trivaa-process-step[data-step="5"] + div {
+      left: 74px;
+      top: 1104px; } }
+  .trivaa-process-mobile .trivaa-process-step[data-step="5"] + div + div {
+    top: 640px; }
+  @media (min-width: 741px) {
+    .trivaa-process-mobile .trivaa-process-step[data-step="5"] + div + div {
+      top: 1104px; } }
+
+/*********************************************************************************************
+ * About
+ *********************************************************************************************/
+.trivaa-about {
+  margin-top: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: #f7f7f7;
+  color: #535353; }
+
+/*********************************************************************************************
+ * Contact
+ *********************************************************************************************/
+.trivaa-contact {
+  padding-top: 4rem;
+  padding-bottom: 16rem;
+  background-color: #f7f7f7;
+  color: #535353; }
+  .trivaa-contact ul.list-group {
+    padding-left: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-left: 2px solid #004964; }
+    .trivaa-contact ul.list-group li.list-group-item {
+      padding: 4px 0px !important;
+      border: none !important;
+      background-color: #f7f7f7; }
+      .trivaa-contact ul.list-group li.list-group-item img {
+        width: 32px;
+        height: 32px;
+        margin-right: 1rem;
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+        filter: grayscale(100%); }
+
+/*********************************************************************************************
+ * Footer
+ *********************************************************************************************/
+footer {
+  padding: 2.5rem 0rem;
+  font-size: 12px;
+  color: #868686;
+  background-color: #535353; }
+  footer a {
+    color: #816e03; }
+  footer img {
+    -webkit-filter: brightness(60%) grayscale(100%);
+    -moz-filter: brightness(60%) grayscale(100%);
+    -o-filter: brightness(60%) grayscale(100%);
+    -ms-filter: brightness(60%) grayscale(100%);
+    filter: brightness(60%) grayscale(100%);
+    height: 40px;
+    width: auto;
+    margin: auto; }
+
+/*********************************************************************************************
+ * Ask for Offer
+ *********************************************************************************************/
+div#mainContent.blur {
+  animation-name: main-content-blur;
+  animation-fill-mode: backwards;
+  animation-duration: 600ms; }
+
+div#mainContent.blur {
+  animation-name: main-content-blur;
+  animation-fill-mode: forwards;
+  animation-duration: 600ms; }
+
+@keyframes main-content-blur {
+  from {
+    -webkit-filter: none;
+    -moz-filter: none;
+    -o-filter: none;
+    -ms-filter: none;
+    filter: none; }
+  to {
+    -webkit-filter: blur(6px);
+    -moz-filter: blur(6px);
+    -o-filter: blur(6px);
+    -ms-filter: blur(6px);
+    filter: blur(6px); } }
+/* Button styles */
+button.trivaa-ask-for-offer {
+  font-weight: bold;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  outline: none !important;
+  margin-left: .75rem;
+  text-transform: uppercase; }
+  button.trivaa-ask-for-offer img {
+    height: 1.2rem;
+    margin-right: .5rem; }
+
+/* Overlay and its active helper style */
+div.trivaa-offer-form-overlay {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 0%;
+  height: 0%;
+  z-index: 7000; }
+
+div.overlay-active {
+  width: 100%;
+  height: 100%; }
+
+/* Style of the form itself */
+div.trivaa-offer-form {
+  position: fixed;
+  left: 0px;
+  width: 600px;
+  height: 700px;
+  border: 2px solid white;
+  border-left: none;
+  border-top-right-radius: 32px;
+  border-bottom-right-radius: 32px;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition-property: left;
+  transition-duration: 600ms;
+  overflow: hidden;
+  padding: 16px;
+  z-index: 7500;
+  /* Anchor and button styles */
+  /* Action buttons are wider */
+  /* Override for the close button */
+  /* Form content style */
+  /* Helper class to hide the content */
+  /* Spinner style */
+  /* Submit outcome message styles */
+  /* Helper to show additional content */ }
+  div.trivaa-offer-form a:not(.normal-anchor), div.trivaa-offer-form input {
+    display: block;
+    border: 2px solid white;
+    border-radius: 8px;
+    color: white;
+    padding: 4px 16px;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 4px; }
+  div.trivaa-offer-form a:not(.normal-anchor) {
+    font-size: 14px;
+    cursor: pointer;
+    transition-property: background-color, color;
+    transition-duration: 400ms; }
+    div.trivaa-offer-form a:not(.normal-anchor) img {
+      width: 20px;
+      height: 20px;
+      margin-right: 4px; }
+  div.trivaa-offer-form a:not(.normal-anchor).selected-anchor {
+    background-color: #7aa2b2; }
+  div.trivaa-offer-form a:not(.normal-anchor).action-button {
+    padding: 8px 40px; }
+  div.trivaa-offer-form a#closeForm.action-button {
+    background-color: #fa6723; }
+    div.trivaa-offer-form a#closeForm.action-button img {
+      width: 16px;
+      height: 16px; }
+  div.trivaa-offer-form a#closeForm.action-button:hover {
+    background-color: #ef4f05; }
+  div.trivaa-offer-form div.form-content {
+    transition-property: opacity;
+    transition-duration: 400ms;
+    /* General style for a form section */
+    /* Override for the 'Other...' software kind */
+    /* Override for the email input */
+    /* Override for the submit button */ }
+    div.trivaa-offer-form div.form-content div.form-section {
+      margin-top: 4rem; }
+      div.trivaa-offer-form div.form-content div.form-section h5 {
+        margin-bottom: 1rem; }
+    div.trivaa-offer-form div.form-content input#softwareKindOtherText {
+      visibility: hidden;
+      opacity: 0;
+      width: 25rem;
+      transition-property: opacity;
+      transition-duration: 400ms; }
+    div.trivaa-offer-form div.form-content input#softwareKindOtherText.input-active {
+      visibility: visible;
+      opacity: 1; }
+    div.trivaa-offer-form div.form-content input#contactEmail {
+      width: 32rem; }
+    div.trivaa-offer-form div.form-content a#sendOfferRequest.action-button {
+      background-color: #28a745; }
+    div.trivaa-offer-form div.form-content a#sendOfferRequest.action-button:hover {
+      background-color: #208637; }
+  div.trivaa-offer-form div.content-hide {
+    opacity: 0; }
+  div.trivaa-offer-form div.form-spinner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition-property: opacity;
+    transition-duration: 400ms;
+    visibility: hidden;
+    opacity: 0;
+    background-image: url(../img/spinner.gif);
+    background-position: center;
+    background-repeat: no-repeat; }
+  div.trivaa-offer-form div.form-submit-complete {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition-property: opacity;
+    transition-duration: 400ms;
+    visibility: hidden;
+    opacity: 0;
+    vertical-align: middle;
+    padding: 0px 32px; }
+    div.trivaa-offer-form div.form-submit-complete a:not(.action-button) {
+      color: #7aa2b2; }
+    div.trivaa-offer-form div.form-submit-complete a:not(.action-button):hover {
+      color: #fa6723; }
+  div.trivaa-offer-form div.additional-content-show {
+    visibility: visible;
+    opacity: 1; }
+
+@media (max-width: 767px) {
+  div.trivaa-offer-form {
+    top: 56px; } }
+@media (min-width: 768px) {
+  div.trivaa-offer-form {
+    top: 80px; } }
+@media (max-width: 599px), (max-height: 699px) {
+  div.trivaa-offer-form {
+    border: none;
+    border-radius: 0%;
+    overflow: auto;
+    width: 100%;
+    height: 100%; }
+    div.trivaa-offer-form div.form-content div.form-section {
+      margin-top: .5rem; }
+      div.trivaa-offer-form div.form-content div.form-section h5 {
+        margin-bottom: 1rem; } }
+/* Helper style for the form when its hidden */
+div.form-hidden {
+  left: -100%; }
+
+/* Helper to prevent scrolling of certain content */
+@media (max-width: 767px) {
+  .noscroll {
+    overflow: hidden !important; } }

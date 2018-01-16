@@ -1,6 +1,11 @@
 apps:
   - script: ./service.js
-    name: 'Offer Service (trivaalogic.hu)'
+    args:
+      - 8811
+    name: offerservice-trivaalogic.hu
+    exec_mode: fork
+    autorestart: true
+    max_restarts: 3
     instances: 1
     env_production:
       NODE_ENV: production

@@ -1,0 +1,6 @@
+apps:
+  - script: ./service.js
+    name: 'Offer Service (trivaalogic.hu)'
+    instances: 1
+    env_production:
+      NODE_ENV: production

@@ -14,40 +14,34 @@ intro: Custom software for small and large businesses and individuals
 areas_summary: We design and develop software in the following areas
 mobile_apps: Mobile applications
 mobile_apps_desc: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  Targeting the Android and iOS platforms, we develop native mobile applications for specific needs. This may include
+  the development of any backend that is necessary but may also include integration with existing backend systems. We
+  can create the user interface and interaction designs in accordance with the UI guidelines specific to the platform.
 web_apps: Web applications
 web_apps_desc: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  We create web applications using the latest standards and modern web frameworks. All our web solutions are optimized
+  for mobile devices. If no backend system is readily available then we can develop the entire stack from frontend to
+  backend (full stack).
 db_dev: Database development
 db_dev_desc: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  We develop purely database-oriented software too for various database solutions, including relational and NoSQL solutions
+  (Oracle, PostgreSQL, MySQL/MariaDB, mongoDB, ...). This includes the development of data transformation jobs,
+  Extract-Transfer-Load (ETL) processes, data warehouses and analytics.
 cloud: Cloud and microservices
 cloud_desc: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  We develop software to run on the cloud in the form of microservices, if need be. Any server-side software we build is
+  shipped in a containerized form (via Docker) which enables installation to most cloud infrastructure (AWS, Google App Engine, ...)
+  as well as on-premise systems.
 reveng: Reverse engineering
 reveng_desc: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  Should you have any existing systems that you would like to modify or replace, we can assist you. The need for reverse
+  engineering activity arises when legacy, undocumented systems are still in use. We conduct a thorough analysis on such
+  systems before making the requested changes or doing any other alterations.
 support: Support and consulting
 support_desc: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  All the software we build can be extended with a support agreement tailored to the project. We can also take over the
+  operational aspect and deliver in Software-as-a-Service (SaaS) form. We can assist you as well if you are in need of
+  professional counsel before making decisions concerning the software you use.
 
 # Process
 process_summary: This is how working with us looks like
